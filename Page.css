@@ -1,10 +1,11 @@
 :root{
   --primary:#5C69FF;
-  --pre-dark:#4F505D
+  --pre-dark:#4F505D;
+  --gray-ligth : #f0f0f0;
 }
 
 *{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,27 +16,32 @@
 body{
   background-color: white;
 }
-body>header{
-  background-color: white;
+body>.landing-header{
+  background-color: var(--primary);
   position: sticky;
   top: 0;
   text-align: center;
+  padding: 10px 0;
 }
-body>header>h3{
-  color: var(--dark)
+body>.landing-header>h3{
+  color: white;
+  text-transform: uppercase;
+}
+.container-informacion-personal {
+  padding: 15px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .container-imagen{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 10px
+  width: 20%;
+  image-rendering: optimizeSpeed;
 }
-.imagen-presentacion{
-  background-color:white;
-  width: 50%;
-  height: 50%;
+.container-imagen > img {
+  width: 100%;
   border-radius: 50%;
-  align-self: center
+  border: solid 2px var(--pre-dark);
 }
 .descripcion-dev{
   padding: 10px
