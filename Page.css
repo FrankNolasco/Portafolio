@@ -24,9 +24,21 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  
 }
 body{
   background-color: white;
+}
+.btn {
+  padding: 10px 20px;
+  outline: none;
+  text-decoration: none;
+  margin: 10px 0;
+  border-radius: 2px;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .container-gray {
   display: flex;
@@ -50,6 +62,9 @@ body{
   width: 50%;
   display: flex;
   align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .descripcion-dev > p {
   padding: 0 10px;
@@ -63,6 +78,11 @@ body{
 .descripcion-dev > p > strong {
   text-transform: uppercase;
   color: var(--primary);
+}
+.button-hoja-de-vida {
+  background-color: var(--primary);
+  color: white;
+  font-size: 18px;
 }
 .section-portafolio {
   display: flex;
@@ -94,11 +114,23 @@ body{
   padding: 20px;
   flex-wrap: wrap;
 }
-.proyecto {
+.proyecto,
+.conocimiento {
   width: 32.2%;
   background: white;
   border-radius: 4px;
   padding: 20px 15px;
+  transition-property: box-shadow;
+  transition-duration: 1s;
+}
+.proyecto:hover,
+.conocimiento:hover{
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+}
+.proyecto {
+  height: 60vh;
 }
 .proyecto_imagen {
   width: 100%;
@@ -121,17 +153,8 @@ body{
   border-bottom: solid 1px;
 }
 .proyecto-button {
-  background-color: var(--primary-dark);
-  padding: 10px 20px;
-  outline: none;
-  text-decoration: none;
-  margin: 10px 0;
-  border-radius: 2px;
-  text-decoration: none;
+  background-color: var(--primary-pre-dark);
   color: white;
-  display: flex;
-  gap: 10px;
-  align-items: center;
 }
 .proyectos-ver-todos-button {
   color: white;
@@ -139,27 +162,113 @@ body{
   margin: 30px 0;
   text-decoration: none;
 }
-@media screen and (max-width: 1240px) {
-	  
+.dev-conocimientos {
+  margin: 20px 40px 20px 40px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 1024px) {
+.conocimiento {
+  background-color: var(--primary);
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.conocimiento > span {
+  font-weight: bold;
+  font-size: 20px;
+  font-style: oblique;
+  border-bottom: solid 2px white;
+  text-align: center;
+}
+.conocimiento > img { 
+  height: 200px;
+  object-fit: fill;
+}
+.lenguajes-extra {
+  text-align: center;
+}
+@media screen and (max-width: 1313px) {
+  .proyectos-layout > .proyecto,
+  .conocimiento{
+    width: 32%;
+  }
+}
+@media screen and (max-width: 1124px) {
+  .proyectos-layout > .proyecto,
+  .conocimiento{
+    width: 31%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 980px) {
+  .proyectos-layout,
+  .dev-conocimientos{
+    height: auto;
+    padding: 0;
+  }
   
-}
-@media screen and (max-width: 770px) {
-  .descripcion-dev {
-    width: 50%;
-     font-size: 20px;
+  .proyectos-layout > .proyecto,
+  .conocimiento{
+    width: 100%;
+    height: auto;
+  }
+  .conocimiento {
+    margin: 10px 0;
+  }
+  .conocimiento > img {
+    height: auto;
+    object-fit: contain;
+    max-height: 200px;
+  }
+  .section-portafolio:nth-child(2n),
+  .section-portafolio:nth-child(2n-1){
+    height: auto;
+  }
+  .lenguajes-extra {
+    width: 80%;
+    margin: 10px auto 40px auto;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 769px) {
   .descripcion-dev {
-    width: 60%;
+    width: 100%;
      font-size: 20px;
   }
+  
 }
 @media screen and (max-width: 410px) {
-  
+  .descripcion-dev {
+    width: 100%;
+  }
+  .descripcion-dev > p{
+    font-size: 30px;
+  }
 }
 @media screen and (max-width: 345px) {
-
+  .descripcion-dev > p {
+    font-size: 23px;
+    line-height: 40px;
+  }
+  .button-hoja-de-vida {
+    font-size: 13px;
+  }
+  .name-section {
+    font-size: 23px;
+    align-items: center;
+    gap: 5px;
+  }
+  .proyectos-layout,
+  .dev-conocimientos{
+    margin: 10px 20px;
+  }
+  .proyectos-ver-todos-button{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }

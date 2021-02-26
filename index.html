@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://franksitokawai.github.io/Portafolio/Page.css" />
-    <!-- <link rel="stylesheet" href="./Page.css" /> -->
+    <!-- <link rel="stylesheet" href="https://franksitokawai.github.io/Portafolio/Page.css" /> -->
+    <link rel="stylesheet" href="./Page.css" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -19,12 +19,20 @@
   </head>
   <body>
     <div class="container-gray">
-      <img src="https://franksitokawai.github.io/Portafolio/assets/portada.jpg" alt="">
+      <img
+        src="https://franksitokawai.github.io/Portafolio/assets/portada.jpg"
+        alt=""
+      />
       <!-- <img src="./assets/portada.jpg" alt=""> -->
       <div class="descripcion-dev">
         <p>
-          Hola, Soy Neurex un <strong>Desarrollador Web</strong> y me gustaría mucho escribir codigo para tu empresa.
+          Hola, Soy Neurex un <strong>Desarrollador Full Stack</strong> y me gustaría
+          mucho escribir codigo para tu empresa.
         </p>
+        <button class="btn button-hoja-de-vida">
+          <i class="fa fa-cloud-download-alt"></i>
+          <span>Descarga mi hoja de vida</span>
+        </button>
       </div>
     </div>
     <div class="section-portafolio">
@@ -35,13 +43,20 @@
       <div class="proyectos-layout">
         <div class="proyecto">
           <div class="proyecto_imagen">
-            <img src="https://franksitokawai.github.io/Portafolio/assets/HSantaRosa.png" alt="">
+            <img
+              src="https://franksitokawai.github.io/Portafolio/assets/HSantaRosa.png"
+              alt=""
+            />
             <!-- <img src="/assets/HSantaRosa.png" alt=""> -->
           </div>
           <div class="proyecto-descripcion">
             <span>WEB APP DE GESTION HOSPITALARIA</span>
             <p>HOSPITAL DE LA AMISTAD PERU - COREA SANTA ROSA II-2</p>
-            <a class="proyecto-button" href="http://web.hsantarosa.gob.pe" target="_blank">
+            <a
+              class="btn proyecto-button"
+              href="http://web.hsantarosa.gob.pe"
+              target="_blank"
+            >
               <i class="fa fa-paper-plane"></i>
               <span>Visita el sitio web</span>
             </a>
@@ -49,13 +64,20 @@
         </div>
         <div class="proyecto">
           <div class="proyecto_imagen">
-            <img src="https://franksitokawai.github.io/Portafolio/assets/ACAVADOS.png" alt="">
+            <img
+              src="https://franksitokawai.github.io/Portafolio/assets/ACAVADOS.png"
+              alt=""
+            />
             <!-- <img src="./assets/ACAVADOS.png" alt=""> -->
           </div>
           <div class="proyecto-descripcion">
             <span>WEB APP DE GESTION DE CONTENIDO</span>
             <p>ACAVADOS SERVICIOS GENERALES</p>
-            <a class="proyecto-button" href="https://acavadosserviciosgenerales.com" target="_blank">
+            <a
+              class="btn proyecto-button"
+              href="https://acavadosserviciosgenerales.com"
+              target="_blank"
+            >
               <i class="fa fa-paper-plane"></i>
               <span>Visita el sitio web</span>
             </a>
@@ -63,13 +85,20 @@
         </div>
         <div class="proyecto">
           <div class="proyecto_imagen">
-            <img src="https://franksitokawai.github.io/Portafolio/assets/portafolio.png" alt="">
+            <img
+              src="https://franksitokawai.github.io/Portafolio/assets/portafolio.png"
+              alt=""
+            />
             <!-- <img src="./assets/portafolio.png" alt=""> -->
           </div>
           <div class="proyecto-descripcion">
             <span>MI PORTAFOLIO PERSONAL</span>
             <p>PROYECTO INDEPENDIENTE</p>
-            <a class="proyecto-button" href="https://github.com/FranksitoKawai/Portafolio" target="_blank">
+            <a
+              class="btn proyecto-button"
+              href="https://github.com/FranksitoKawai/Portafolio"
+              target="_blank"
+            >
               <i class="fab fa-github"></i>
               <span>Ver repositorio Github</span>
             </a>
@@ -83,18 +112,42 @@
     </div>
     <div class="section-portafolio">
       <div class="name-section">
-        <i class="fa fa-book"></i>
-        <span>Estudios</span>
-      </div>
-      <div>
-        
-      </div>
-    </div>
-    <div class="section-portafolio">
-      <div class="name-section">
         <i class="fa fa-brain"></i>
         <span>Conocimientos</span>
       </div>
+      <div class="dev-conocimientos">
+        <div class="conocimiento">
+          <img src="./assets/react.png" alt="">
+          <span>REACT</span>
+          <p>
+            Mi conocimiento en la librería React, tengo experiencia trabajando con 
+            API REST ademas, puedo integrar Redux y styled-components,
+            ademas de hacer Server Side Rendering con tecnologias como Gatsby o Next Js.
+          </p>
+        </div>
+        <div class="conocimiento">
+          <img src="./assets/node.jpg" alt="">
+          <span>Node JS</span>
+          <p>
+            En Node JS, He utilizado Express JS para crear una API REST, con rutas protegidas. 
+            tambien tengo un poco de experiencia con Socket.io para generar una comunicacion 
+            de datos en tiempo real.
+          </p>
+        </div>
+        <div class="conocimiento">
+          <img src="./assets/rn.png" alt="">
+          <span>REACT NATIVE</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            quam et modi dignissimos nemo vitae voluptatum facilis expedita
+            labore, ut amet magnam quidem. Cupiditate corrupti debitis delectus
+            dolorum, quo architecto.
+          </p>
+        </div>
+      </div>
+      <p class="lenguajes-extra">
+        ...Tambien estoy familiarizado con Python, Java y C#
+      </p>
     </div>
   </body>
 </html>
