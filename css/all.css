@@ -1,0 +1,42 @@
+:root{
+    --primary-dark : #A04FFF;
+    --primary-dark-rgba : rgba(160, 79, 255, .3);
+    --primary-pre-dark : #6648E8;
+    --primary-pre-dark-rgba : rgba(102, 72, 232, .3);
+    --primary:#5C69FF;
+    --primary-rgba : rgba(92, 105, 255, .3);
+    --primary-pre-light: #487FE8;
+    --primary-pre-light-rgba : rgba(72, 127, 232, .3);
+    --primary-light: #4FBAFF;
+    --primary-light-rgba : rgba(79, 186, 255, .3);
+    --pre-dark:#4F505D;
+    --gray-ligth : #f0f0f0;
+  }
+  :root {
+    --container : 100vh
+  }
+  
+  *{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: white;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    outline: none;
+    text-decoration: none;
+    margin: 10px 0;
+    border-radius: 2px;
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
