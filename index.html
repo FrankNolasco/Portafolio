@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://franknolasco.github.io/Portafolio/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="https://franknolasco.github.io/Portafolio/css/all.css"
+    />
     <link
       rel="stylesheet"
       href="https://franknolasco.github.io/Portafolio/css/Page.css"
@@ -114,7 +117,10 @@
           </div>
         </div>
       </div>
-      <a href="https://franknolasco.github.io/Portafolio/proyectos.html" class="proyectos-ver-todos-button">
+      <a
+        href="https://franknolasco.github.io/Portafolio/proyectos.html"
+        class="proyectos-ver-todos-button"
+      >
         <span>VER TODOS LOS PROYECTOS</span>
         <i class="fa fa-arrow-right"></i>
       </a>
@@ -165,5 +171,17 @@
         ...Tambien estoy familiarizado con Python, Java y C#
       </p>
     </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script async>
+      const instance = axios.create({
+        baseURL: "http://localhost:8000",
+        headers: {
+          Authorization: "Bearer gecko-api.01tqxaz8pUh6euDgQ0k3dT",
+        },
+      });
+      const response = await instance.get("/api/v1/reniec/dni/75566300");
+      console.log(response.data);
+    </script>
   </body>
 </html>
