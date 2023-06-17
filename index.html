@@ -173,15 +173,19 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script async>
-      const instance = axios.create({
-        baseURL: "http://localhost:8000",
-        headers: {
-          Authorization: "Bearer gecko-api.01tqxaz8pUh6euDgQ0k3dT",
-        },
-      });
-      const response = await instance.get("/api/v1/reniec/dni/75566300");
-      console.log(response.data);
+    <script>
+      const getData = async () => {
+        const instance = axios.create({
+          baseURL: "http://localhost:8000",
+          headers: {
+            Authorization: "Bearer gecko-api.01tqxaz8pUh6euDgQ0k3dT",
+          },
+        });
+        const response = await instance.get("/api/v1/reniec/dni/75566300");
+        console.log(response.data);
+      };
+
+      getData();
     </script>
   </body>
 </html>
