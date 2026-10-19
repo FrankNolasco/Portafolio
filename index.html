@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://franknolasco.github.io/Portafolio/css/all.css"
+      href="css/all.css"
     />
     <link
       rel="stylesheet"
-      href="https://franknolasco.github.io/Portafolio/css/Page.css"
+      href="css/Page.css"
     />
     <!-- <link rel="stylesheet" href=".css/Page.css" /> -->
     <link
@@ -171,6 +171,20 @@
         ...Tambien estoy familiarizado con Python, Java y C#
       </p>
     </div>
+
+    <section class="section-portafolio contacto" aria-labelledby="contacto-titulo">
+      <h2 class="name-section" id="contacto-titulo">Contacto</h2>
+      <div class="contacto-campos" role="group" aria-labelledby="contacto-titulo" aria-describedby="contacto-aviso">
+        <label for="contacto-nombre">Nombre</label>
+        <input id="contacto-nombre" type="text" autocomplete="name" />
+        <label for="contacto-correo">Correo electrónico</label>
+        <input id="contacto-correo" type="email" autocomplete="email" />
+        <label for="contacto-mensaje">Mensaje</label>
+        <textarea id="contacto-mensaje" rows="6"></textarea>
+        <p id="contacto-aviso">Demostración: no se envían datos</p>
+        <button class="btn contacto-enviar" type="button" disabled>Enviar</button>
+      </div>
+    </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>

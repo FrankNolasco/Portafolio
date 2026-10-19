@@ -1,4 +1,46 @@
 
+.section-portafolio.contacto {
+  height: auto;
+  padding: 0 20px 40px;
+}
+.contacto-campos {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 4px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contacto-campos label {
+  font-weight: 600;
+}
+.contacto-campos input,
+.contacto-campos textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--pre-dark);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.contacto-campos textarea {
+  resize: vertical;
+}
+.contacto-campos input:focus-visible,
+.contacto-campos textarea:focus-visible {
+  outline: 3px solid var(--primary-pre-dark);
+  outline-offset: 2px;
+}
+.contacto-enviar:disabled {
+  align-self: flex-start;
+  background: var(--gray-ligth);
+  color: var(--pre-dark);
+  border: 1px dashed var(--pre-dark);
+  cursor: not-allowed;
+}
 .container-gray {
   display: flex;
   flex-direction: column;
