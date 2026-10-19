@@ -42,6 +42,10 @@ html {
 .menu-principal a:hover {
   text-decoration: underline;
 }
+a:focus-visible {
+  outline: 3px solid #202139;
+  outline-offset: 3px;
+}
 .menu-principal a:focus-visible {
   outline: 2px solid white;
   outline-offset: -4px;
@@ -60,8 +64,8 @@ html {
 .container-gray,
 .section-portafolio {
   /* Fallback para navegadores sin unidades de viewport dinámicas. */
-  min-height: calc(100vh - var(--menu-height));
-  min-height: max(0px, calc(100dvh - var(--menu-height)));
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-wrap: anywhere;
 }
 .container-gray {
