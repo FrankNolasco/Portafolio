@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://franknolasco.github.io/Portafolio/css/all.css"
+      href="./css/all.css"
     />
     <link
       rel="stylesheet"
-      href="https://franknolasco.github.io/Portafolio/css/Page.css"
+      href="./css/Page.css"
     />
     <!-- <link rel="stylesheet" href=".css/Page.css" /> -->
     <link
@@ -25,7 +25,14 @@
     <title>Frank Nolasco - Portafolio</title>
   </head>
   <body>
-    <div class="container-gray">
+    <nav class="menu-principal" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#conocimientos">Conocimientos</a></li>
+      </ul>
+    </nav>
+    <div class="container-gray" id="inicio">
       <img
         src="https://franknolasco.github.io/Portafolio/assets/portada.jpg"
         alt=""
@@ -47,7 +54,7 @@
         </a>
       </div>
     </div>
-    <div class="section-portafolio">
+    <div class="section-portafolio" id="proyectos">
       <div class="name-section">
         <i class="fa fa-code-branch"></i>
         <span> Proyectos </span>
@@ -125,7 +132,7 @@
         <i class="fa fa-arrow-right"></i>
       </a>
     </div>
-    <div class="section-portafolio">
+    <div class="section-portafolio" id="conocimientos">
       <div class="name-section">
         <i class="fa fa-brain"></i>
         <span>Conocimientos</span>
