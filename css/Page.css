@@ -20,7 +20,7 @@ html {
   top: 0;
   z-index: 10;
   height: var(--menu-height);
-  background: var(--primary-pre-dark);
+  background: var(--action);
 }
 .menu-principal ul {
   height: 100%;
@@ -34,7 +34,7 @@ html {
   justify-content: center;
   height: 100%;
   padding: 0 1rem;
-  color: white;
+  color: var(--on-primary);
   font-size: 1rem;
   line-height: 1.5;
   text-decoration: none;
@@ -43,11 +43,11 @@ html {
   text-decoration: underline;
 }
 a:focus-visible {
-  outline: 3px solid #202139;
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 .menu-principal a:focus-visible {
-  outline: 2px solid white;
+  outline: 2px solid var(--on-primary);
   outline-offset: -4px;
 }
 @media (max-width: 480px) {
@@ -85,7 +85,7 @@ a:focus-visible {
   object-fit: cover;
 }
 .descripcion-dev {
-  background-color: white;
+  background-color: var(--surface);
   min-height: inherit;
   width: 50%;
   display: flex;
@@ -101,11 +101,11 @@ a:focus-visible {
   max-width: calc(100% - 2rem);
   margin: 2rem 1rem 0;
   padding: 0.75rem 1rem;
-  border: 3px solid #202139;
+  border: 3px solid var(--text);
   border-radius: 1rem;
-  background: white;
-  color: #202139;
-  box-shadow: 5px 5px 0 #202139;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 5px 5px 0 var(--text);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 800;
   line-height: 1.2;
@@ -120,7 +120,7 @@ a:focus-visible {
 }
 .descripcion-dev > p {
   padding: 0 10px;
-  color: black;
+  color: var(--text);
   bottom: 0px;
   font-size: 35px;
   text-align: center;
@@ -129,11 +129,11 @@ a:focus-visible {
 }
 .descripcion-dev > p > strong {
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-pre-dark);
 }
 .button-hoja-de-vida {
   background-color: var(--primary);
-  color: white;
+  color: var(--on-primary);
   font-size: 18px;
 }
 .section-portafolio {
@@ -149,7 +149,7 @@ a:focus-visible {
   font-weight: bold;
 }
 #proyectos > .name-section {
-  color: white;
+  color: var(--on-primary);
 }
 #conocimientos > .name-section {
   color: var(--primary-pre-dark);
@@ -168,7 +168,7 @@ a:focus-visible {
 .conocimiento {
   width: 32.2%;
   min-width: 0;
-  background: white;
+  background: var(--surface);
   border-radius: 4px;
   padding: 20px 15px;
   transition-property: box-shadow;
@@ -176,9 +176,7 @@ a:focus-visible {
 }
 .proyecto:hover,
 .conocimiento:hover{
-  -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 10px 0px var(--shadow);
 }
 .proyecto {
   min-height: 60vh;
@@ -204,11 +202,11 @@ a:focus-visible {
   border-bottom: solid 1px;
 }
 .proyecto-button {
-  background-color: var(--primary-pre-dark);
-  color: white;
+  background-color: var(--action);
+  color: var(--on-primary);
 }
 .proyectos-ver-todos-button {
-  color: white;
+  color: var(--on-primary);
   align-self: center;
   margin: 30px 0;
   text-decoration: none;
@@ -223,7 +221,7 @@ a:focus-visible {
 .conocimiento {
   background-color: var(--primary);
   margin: 0 auto;
-  color: white;
+  color: var(--on-primary);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -232,7 +230,7 @@ a:focus-visible {
   font-weight: bold;
   font-size: 20px;
   font-style: oblique;
-  border-bottom: solid 2px white;
+  border-bottom: solid 2px currentColor;
   text-align: center;
 }
 .conocimiento > img { 

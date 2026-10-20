@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light;
+  --page: #ffffff;
+  --surface: #ffffff;
+  --text: #202139;
+  --primary: #4652cf;
+  --primary-pre-dark: #5835c4;
+  --on-primary: #ffffff;
+  --focus: #202139;
+  --logo: #e4e7ff;
+  --gray-ligth: #dedee8;
+  --shadow: rgba(0, 0, 0, .35);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #141520;
+  --surface: #232538;
+  --text: #f1f2ff;
+  --primary: #303a91;
+  --primary-pre-dark: #bdb1ff;
+  --on-primary: #ffffff;
+  --focus: #f1d272;
+  --logo: #393d65;
+  --gray-ligth: #555873;
+  --shadow: rgba(0, 0, 0, .65);
+}
+
+/* Los fondos de acciones conservan contraste con su texto en ambos temas. */
+:root { --action: #5835c4; }
+:root[data-theme="dark"] { --action: #5140a6; }
+
+.theme-toggle {
+  display: block;
+  margin: .5rem auto;
+  padding: .5rem 1rem;
+  min-height: 44px;
+  border: 2px solid currentColor;
+  border-radius: .3rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.theme-toggle:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.identidad-frank-logo rect { fill: var(--logo); }
+.theme-toggle[hidden] { display: none; }
