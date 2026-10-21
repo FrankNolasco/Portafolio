@@ -4,6 +4,48 @@
   const links = [...menu.querySelectorAll('li a[href^="#"]')];
   const sections = links.map(link => document.querySelector(link.hash)).filter(Boolean);
   let pending = false;
+  let animation;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const stopAnimation = () => cancelAnimationFrame(animation);
+  const moveTo = top => {
+    stopAnimation();
+    const start = window.scrollY;
+    const destination = Math.max(0, Math.min(top, document.documentElement.scrollHeight - window.innerHeight));
+    if (reducedMotion.matches) {
+      window.scrollTo({ top: destination, behavior: 'instant' });
+      return;
+    }
+    const started = performance.now();
+    const frame = now => {
+      // El timestamp del frame puede preceder a performance.now() en este ciclo.
+      const progress = Math.max(0, Math.min(1, (now - started) / 650));
+      const eased = 1 - Math.pow(1 - progress, 3);
+      // No encadenar animaciones nativas a cada fotograma.
+      window.scrollTo({ top: start + (destination - start) * eased, behavior: 'instant' });
+      if (progress < 1) animation = requestAnimationFrame(frame);
+    };
+    animation = requestAnimationFrame(frame);
+  };
+  const moveToSection = section => {
+    const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    moveTo(window.scrollY + section.getBoundingClientRect().top - offset);
+  };
+  menu.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const section = document.getElementById(link.hash.slice(1));
+    if (!section) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    section.focus({ preventScroll: true });
+    moveToSection(section);
+  });
+  // El teclado y el tacto deben poder interrumpir una transición.
+  window.addEventListener('keydown', event => {
+    if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) stopAnimation();
+  });
+  window.addEventListener('touchstart', stopAnimation, { passive: true });
+  reducedMotion.addEventListener('change', stopAnimation);
 
   // Un gesto (incluida la inercia del trackpad) solo cambia una sección.
   let wheelLocked = false;
@@ -41,9 +83,9 @@
       // Llegar al final del contenido antes de permitir abandonar la sección.
       if (Math.abs(delta) > remaining) {
         event.preventDefault();
-        window.scrollBy({ top: direction * remaining, behavior: 'instant' });
+        moveTo(window.scrollY + direction * remaining);
         wheelLocked = true;
-        transitionUntil = 0;
+        transitionUntil = performance.now() + (reducedMotion.matches ? 0 : 650);
         releaseAfterGesture();
       }
       return;
@@ -51,10 +93,10 @@
     const next = sections[index + direction];
     if (!next) return;
     event.preventDefault();
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    next.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' });
+    const reduced = reducedMotion.matches;
+    moveToSection(next);
     wheelLocked = true;
-    transitionUntil = performance.now() + (reduced ? 0 : 1000);
+    transitionUntil = performance.now() + (reduced ? 0 : 650);
     releaseAfterGesture();
   }, { passive: false });
 
