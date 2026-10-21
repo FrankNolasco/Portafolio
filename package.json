@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-gallery",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i css/source.css -o css/site.css --minify",
+    "build:static": "npm run build && node scripts/build-static.cjs",
+    "test": "node tests/theme.test.cjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

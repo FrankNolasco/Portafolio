@@ -3,12 +3,14 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const source = readFileSync('js/theme.js', 'utf8');
 for (const saved of [null, 'light', 'dark', 'invalid', 'blocked']) {
+ for (const systemDark of [false, true]) {
   const events = {};
   const button = { hidden: true, setAttribute(k, v) { this[k] = v; },
     addEventListener(k, fn) { events[k] = fn; } };
   const root = { dataset: {} };
   let stored = saved;
   vm.runInNewContext(source, {
+    matchMedia() { return { matches: systemDark }; },
     document: { documentElement: root,
       addEventListener(k, fn) { events[k] = fn; },
       querySelector() { return button; } },
@@ -17,7 +19,7 @@ for (const saved of [null, 'light', 'dark', 'invalid', 'blocked']) {
       setItem(k, v) { if (saved === 'blocked') throw Error('blocked'); stored = v; }
     }
   });
-  const initial = saved === 'dark' ? 'dark' : 'light';
+  const initial = ['dark', 'light'].includes(saved) ? saved : systemDark ? 'dark' : 'light';
   assert.equal(root.dataset.theme, initial);
   events.DOMContentLoaded();
   assert.equal(button.hidden, false);
@@ -28,5 +30,6 @@ for (const saved of [null, 'light', 'dark', 'invalid', 'blocked']) {
   if (saved !== 'blocked') assert.equal(stored, root.dataset.theme);
   events.click();
   assert.equal(root.dataset.theme, initial);
+ }
 }
 console.log('OK: inicio, alternancia doble, aria-pressed, persistencia y almacenamiento bloqueado');

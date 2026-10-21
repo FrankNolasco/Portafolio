@@ -1,9 +1,10 @@
 (() => {
   const root = document.documentElement;
   // El almacenamiento puede estar bloqueado; el selector sigue funcionando.
-  let theme = "light";
+  let theme = typeof matchMedia === "function" && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   try {
-    if (localStorage.getItem("portfolio-theme") === "dark") theme = "dark";
+    const saved = localStorage.getItem("portfolio-theme");
+    if (saved === "dark" || saved === "light") theme = saved;
   } catch (_) {}
   root.dataset.theme = theme;
 

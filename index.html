@@ -1,200 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="./css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./css/Page.css"
-    />
-    <!-- <link rel="stylesheet" href=".css/Page.css" /> -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Frank Nolasco - Portafolio</title>
-    <link rel="stylesheet" href="./css/themes.css" />
-    <link rel="stylesheet" href="./css/refinements.css" />
-    <script src="./js/theme.js"></script>
-    <script src="./js/navigation.js" defer></script>
-  </head>
-  <body>
-    <nav class="menu-principal" aria-label="Navegación principal">
-      <a class="menu-marca" href="#inicio">
-        <svg class="identidad-frank-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <rect x="3" y="3" width="58" height="58" rx="12" stroke="currentColor" stroke-width="4" />
-          <path d="m23 22-11 10 11 10m18-20 11 10-11 10m-6-24-6 28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span>Frank Nolasco</span>
-      </a>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#conocimientos">Conocimientos</a></li>
-      </ul>
-      <button class="theme-toggle" type="button" aria-pressed="false" hidden>
-        <svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
-        <svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z" /></svg>
-        <span>Modo oscuro</span>
-        <span class="theme-switch" aria-hidden="true"></span>
-      </button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Una colección de proyectos ficticios para explorar interfaces, navegación y experiencias de uso en distintos tipos de aplicaciones.">
+  <title>Frank Nolasco · Portafolio de demostración</title>
+  <link rel="stylesheet" href="./css/site.css">
+  <script src="./js/theme.js"></script>
+  <script src="./js/navigation.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+  <header class="menu-principal">
+    <a class="menu-marca" href="#inicio">Frank Nolasco</a>
+    <button class="menu-toggle btn" type="button" aria-expanded="false" aria-controls="home-navigation" hidden>Menú</button>
+    <nav id="home-navigation" aria-label="Navegación principal">
+      <ul><li><a href="#inicio">Inicio</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#areas">Áreas</a></li><li><a href="#sobre">Sobre este portafolio</a></li></ul>
     </nav>
-    <div class="container-gray" id="inicio" tabindex="-1">
-      <img
-        src="./assets/portada.jpg"
-        alt=""
-      />
-      <!-- <img src="./assets/portada.jpg" alt=""> -->
-      <div class="descripcion-dev">
-        <h1 class="identidad-frank">
-          <svg class="identidad-frank-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-            <rect x="3" y="3" width="58" height="58" rx="12" stroke="currentColor" stroke-width="4" />
-            <path d="m23 22-11 10 11 10m18-20 11 10-11 10m-6-24-6 28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <span>Frank Nolasco</span>
-        </h1>
-        <p>
-          Hola, Soy Frank Nolasco un <strong>Desarrollador Frontend</strong> y
-          me gustaría mucho escribir codigo para tu empresa.
-        </p>
-        <!-- <a class="btn button-hoja-de-vida" href="https://franksitokawai.github.io/Portafolio/assets/CV-FRANK NOLASCO VELASQUEZ.pdf"> -->
-        <a
-          class="btn button-hoja-de-vida"
-          target="_blank"
-          href="https://franknolasco.github.io/Portafolio/assets/CV-FRANK NOLASCO VELASQUEZ.pdf"
-        >
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg>
-          <span>Ver mi hoja de vida</span>
-        </a>
+    <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
+  </header>
+  <main>
+    <section class="home-section hero" id="inicio" tabindex="-1" aria-labelledby="hero-title">
+      <div><h1 id="hero-title">Diseño y desarrollo de productos digitales</h1>
+        <p class="hero-description">Una colección de proyectos ficticios para explorar interfaces, navegación y experiencias de uso en distintos tipos de aplicaciones.</p>
+        <div class="home-actions"><a class="btn" href="./proyectos.html">Explorar proyectos</a><a href="#sobre">Sobre este portafolio</a></div>
       </div>
-    </div>
-    <div class="section-portafolio" id="proyectos" tabindex="-1">
-      <div class="name-section">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5-7 7 7 7m8-14 7 7-7 7M14 3l-4 18" /></svg>
-        <span> Proyectos </span>
+      <div class="hero-preview"><img src="./assets/demos/orbita.svg" width="960" height="600" alt="Vista sintética de Órbita: tareas agrupadas por estado"><p>Órbita · Productividad</p></div>
+      <p class="demo-notice">Portafolio de demostración · Contenido ficticio</p>
+    </section>
+    <section class="home-section" id="proyectos" tabindex="-1" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">Proyectos destacados</h2><a href="./proyectos.html">Ver todos los proyectos</a></div>
+      <div class="featured-grid">
+        <article class="featured-primary"><img src="./assets/demos/orbita.svg" width="960" height="600" loading="lazy" alt="Panel sintético de tareas de Órbita"><div class="project-caption"><h3>Órbita</h3><span>Productividad</span></div><p>Panel para organizar tareas, prioridades y progreso de un equipo ficticio.</p></article>
+        <article><img src="./assets/demos/lumbre.svg" width="960" height="600" loading="lazy" alt="Catálogo sintético de objetos para el hogar de Lumbre"><div class="project-caption"><h3>Lumbre</h3><span>Comercio</span></div><p>Tienda de objetos para el hogar con catálogo, filtros y fichas de producto.</p></article>
+        <article><img src="./assets/demos/travesia.svg" width="960" height="600" loading="lazy" alt="Explorador sintético de destinos e itinerarios de Travesía"><div class="project-caption"><h3>Travesía</h3><span>Viajes</span></div><p>Explorador de destinos e itinerarios de ejemplo.</p></article>
       </div>
-      <div class="proyectos-layout">
-        <div class="proyecto">
-          <div class="proyecto_imagen">
-            <img
-              src="./assets/HSantaRosa.png"
-              alt=""
-            />
-            <!-- <img src="/assets/HSantaRosa.png" alt=""> -->
-          </div>
-          <div class="proyecto-descripcion">
-            <span>WEB APP DE GESTION HOSPITALARIA</span>
-            <p>HOSPITAL DE LA AMISTAD PERU - COREA SANTA ROSA II-2</p>
-            <a
-              class="btn proyecto-button"
-              href="http://web.hsantarosa.gob.pe"
-              target="_blank"
-            >
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 20 4M8 4h12v12M4 8v12h12" /></svg>
-              <span>Visita el sitio web</span>
-            </a>
-          </div>
-        </div>
-        <div class="proyecto">
-          <div class="proyecto_imagen">
-            <img
-              src="./assets/ACAVADOS.png"
-              alt=""
-            />
-            <!-- <img src="./assets/ACAVADOS.png" alt=""> -->
-          </div>
-          <div class="proyecto-descripcion">
-            <span>WEB APP DE GESTION DE CONTENIDO</span>
-            <p>ACAVADOS SERVICIOS GENERALES</p>
-            <a
-              class="btn proyecto-button"
-              href="https://github.com/franknolasco/Acava-II-site"
-              target="_blank"
-            >
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 20 4M8 4h12v12M4 8v12h12" /></svg>
-              <span>Ver repositorio Github</span>
-            </a>
-          </div>
-        </div>
-        <div class="proyecto">
-          <div class="proyecto_imagen">
-            <img
-              src="./assets/portafolio.png"
-              alt=""
-            />
-            <!-- <img src="./assets/portafolio.png" alt=""> -->
-          </div>
-          <div class="proyecto-descripcion">
-            <span>MI PORTAFOLIO PERSONAL</span>
-            <p>PROYECTO INDEPENDIENTE</p>
-            <a
-              class="btn proyecto-button"
-              href="https://github.com/franknolasco/Portafolio"
-              target="_blank"
-            >
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 20 4M8 4h12v12M4 8v12h12" /></svg>
-              <span>Ver repositorio Github</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a
-        href="./proyectos.html"
-        class="proyectos-ver-todos-button"
-      >
-        <span>VER TODOS LOS PROYECTOS</span>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18m-7-7 7 7-7 7" /></svg>
-      </a>
-    </div>
-    <div class="section-portafolio" id="conocimientos" tabindex="-1">
-      <div class="name-section">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 2-2-2H3ZM12 6v16" /></svg>
-        <span>Conocimientos</span>
-      </div>
-      <div class="dev-conocimientos">
-        <div class="conocimiento">
-          <img
-            src="./assets/react.png"
-            alt=""
-          />
-          <span>REACT</span>
-          <p>
-            Mi experiencia en ReactJS es de aproximadamente 2 años, donde vengo
-            trabajando con react-hooks, styled-components, y conexiones a API
-            REST. ademas de realizar SSR con tecnologias como Gatsby o NextJS.
-          </p>
-        </div>
-        <div class="conocimiento">
-          <img
-            src="./assets/node.jpg"
-            alt=""
-          />
-          <span>Node JS</span>
-          <p>
-            En Node JS, He utilizado Express JS para crear una API REST, con
-            rutas protegidas. tambien tengo un poco de experiencia con Socket.io
-            para generar una comunicacion de datos en tiempo real.
-          </p>
-        </div>
-        <div class="conocimiento">
-          <img
-            src="./assets/rn.png"
-            alt=""
-          />
-          <span>REACT NATIVE</span>
-          <p>
-            He trabajado en distintas Apps, donde me he desempeñado de
-            maquetador.
-          </p>
-        </div>
-      </div>
-      <p class="lenguajes-extra">
-        ...Tambien estoy familiarizado con Python, Java y C#
-      </p>
-    </div>
-  </body>
+    </section>
+    <section class="home-section" id="areas" tabindex="-1" aria-labelledby="areas-title"><h2 id="areas-title">Áreas de ejemplo</h2><dl class="areas-list"><div><dt>Interfaces</dt><dd>Navegación, componentes y adaptación a pantalla.</dd></div><div><dt>Interacción</dt><dd>Formularios, búsqueda y comunicación de estados.</dd></div><div><dt>Visualización</dt><dd>Presentación de información y datos sintéticos.</dd></div></dl></section>
+    <section class="home-section about" id="sobre" tabindex="-1" aria-labelledby="about-title"><h2 id="about-title">Sobre este portafolio</h2><p>Esta web es un entorno de pruebas. Los proyectos, descripciones y conocimientos presentados son ficticios y no representan la trayectoria profesional de Frank Nolasco.</p></section>
+  </main>
+  <footer class="home-footer"><span>Frank Nolasco</span><a href="#inicio">Volver arriba</a></footer>
+</body>
 </html>
