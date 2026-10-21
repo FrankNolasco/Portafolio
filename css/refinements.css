@@ -6,18 +6,43 @@ html { scroll-padding-top: calc(var(--menu-height) + 1rem); scrollbar-color: var
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
-.menu-principal { height: auto; min-height: var(--menu-height); }
-.menu-principal ul { flex-direction: row; flex-wrap: wrap; margin: auto; }
-.menu-principal li { height: var(--menu-height); }
+.menu-principal { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 2rem; padding-inline: clamp(.5rem, 3vw, 3rem); height: auto; min-height: 4rem; }
+.menu-principal ul { flex-direction: row; flex-wrap: wrap; margin: 0; height: auto; }
+.menu-principal li { min-height: 3rem; height: auto; }
 .menu-principal a { padding-inline: 1.25rem; font-weight: 600; }
-.theme-toggle { margin: 1rem auto; }
-.container-gray { min-height: min(48rem, 85vh); isolation: isolate; }
+.menu-principal li a { min-height: 3rem; }
+.menu-principal .menu-marca { justify-content: flex-start; gap: .75rem; padding: .5rem 0; min-height: 4rem; }
+.menu-marca .identidad-frank-logo { width: 2.5rem; height: 2.5rem; }
+.menu-principal a[aria-current="location"] { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: .4em; }
+@media (max-width: 700px) {
+  .menu-principal { gap: 0; }
+  .menu-principal ul { width: 100%; justify-content: flex-start; }
+}
+.menu-principal .theme-toggle { display: inline-flex; align-items: center; gap: .5rem; margin: .5rem 0 .5rem auto; flex-shrink: 0; }
+.menu-principal .theme-toggle[hidden] { display: none; }
+.theme-toggle .theme-moon { display: none; }
+.theme-toggle[aria-pressed="true"] .theme-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .theme-moon { display: block; }
+.theme-switch { display: inline-flex; align-items: center; width: 2.25rem; height: 1.25rem; padding: 2px; border: 1px solid currentColor; border-radius: 1rem; }
+.theme-switch::before { content: ""; width: .875rem; height: .875rem; border-radius: 50%; background: currentColor; }
+.theme-toggle[aria-pressed="true"] .theme-switch { background: var(--action); color: var(--on-primary); }
+.theme-toggle[aria-pressed="true"] .theme-switch::before { margin-inline-start: auto; }
+.theme-toggle:hover { text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 700px) {
+  .menu-principal .theme-toggle { order: 1; }
+  .menu-principal ul { order: 2; }
+}
+.container-gray, .section-portafolio {
+  min-height: calc(100vh - var(--menu-height));
+  min-height: calc(100dvh - var(--menu-height));
+}
+.container-gray { isolation: isolate; }
 .descripcion-dev { padding: 3rem clamp(1.25rem, 4vw, 4rem); gap: 1.5rem; }
 .identidad-frank { margin: 0; max-width: 100%; border-width: 2px; box-shadow: none; }
 .descripcion-dev > p { padding: 0; max-width: 28ch; font-size: clamp(1.5rem, 2.4vw, 2.25rem); line-height: 1.5; }
 .btn { min-height: 48px; justify-content: center; padding: .75rem 1.25rem; border-radius: .375rem; font-size: 1rem; font-weight: 600; text-align: center; }
 .btn:hover { text-decoration: underline; text-underline-offset: .25em; }
-.section-portafolio { height: auto; min-height: 0; padding: clamp(2.5rem, 5vw, 5rem) 0; overflow-wrap: anywhere; }
+.section-portafolio { height: auto; padding: clamp(2.5rem, 5vw, 5rem) 0; overflow-wrap: anywhere; }
 .name-section { margin: 0; padding: 0 1rem 2rem; gap: .75rem; align-items: center; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
 .proyectos-layout, .dev-conocimientos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; width: min(100% - 3rem, 75rem); height: auto; padding: 0; margin: 0 auto; }
 .proyectos-layout > .proyecto, .dev-conocimientos > .conocimiento { display: flex; flex-direction: column; width: 100%; height: auto; min-height: 0; margin: 0; padding: 1.25rem; border-radius: .75rem; transition: none; }
@@ -38,7 +63,6 @@ html { scroll-padding-top: calc(var(--menu-height) + 1rem); scrollbar-color: var
 }
 @media (max-width: 769px) {
   .descripcion-dev { width: 100%; }
-  .container-gray { min-height: 0; }
 }
 @media (max-width: 600px) {
   .proyectos-layout, .dev-conocimientos { grid-template-columns: minmax(0, 1fr); width: calc(100% - 2rem); }

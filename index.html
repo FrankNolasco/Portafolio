@@ -20,16 +20,29 @@
     <link rel="stylesheet" href="./css/themes.css" />
     <link rel="stylesheet" href="./css/refinements.css" />
     <script src="./js/theme.js"></script>
+    <script src="./js/navigation.js" defer></script>
   </head>
   <body>
     <nav class="menu-principal" aria-label="Navegación principal">
+      <a class="menu-marca" href="#inicio">
+        <svg class="identidad-frank-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="58" height="58" rx="12" stroke="currentColor" stroke-width="4" />
+          <path d="m23 22-11 10 11 10m18-20 11 10-11 10m-6-24-6 28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>Frank Nolasco</span>
+      </a>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#conocimientos">Conocimientos</a></li>
       </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" hidden>
+        <svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+        <svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 4a9 9 0 1 0 11 11Z" /></svg>
+        <span>Modo oscuro</span>
+        <span class="theme-switch" aria-hidden="true"></span>
+      </button>
     </nav>
-    <button class="theme-toggle" type="button" aria-pressed="false" hidden>Modo oscuro</button>
     <div class="container-gray" id="inicio" tabindex="-1">
       <img
         src="./assets/portada.jpg"
