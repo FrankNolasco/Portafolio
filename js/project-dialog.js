@@ -1,0 +1,51 @@
+(() => {
+  if (typeof HTMLDialogElement === 'undefined') return;
+  const dialog = document.createElement('dialog');
+  dialog.className = 'project-dialog';
+  dialog.setAttribute('aria-labelledby', 'project-dialog-title');
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'btn dialog-close';
+  close.textContent = 'Cerrar ficha';
+  const content = document.createElement('div');
+  content.className = 'dialog-content';
+  dialog.append(close, content);
+  document.body.append(dialog);
+  let trigger;
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => {
+    document.documentElement.classList.remove('project-dialog-open');
+    trigger?.focus({ preventScroll: true });
+  });
+  document.querySelectorAll('[data-project]').forEach(card => {
+    const details = card.querySelector('details');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn project-details-trigger';
+    button.textContent = details.querySelector('summary').textContent;
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.addEventListener('click', () => {
+      trigger = button;
+      const title = document.createElement('h2');
+      title.id = 'project-dialog-title';
+      title.textContent = card.querySelector('h2').textContent;
+      const body = details.querySelector('.project-case').cloneNode(true);
+      const image = card.querySelector('img').cloneNode(true);
+      image.loading = 'eager';
+      const figure = document.createElement('figure');
+      figure.className = 'project-preview';
+      const fallback = document.createElement('figcaption');
+      fallback.textContent = 'Vista previa no disponible';
+      fallback.hidden = true;
+      image.addEventListener('error', () => { image.hidden = true; fallback.hidden = false; });
+      figure.append(image, fallback);
+      content.replaceChildren(title, body, figure);
+      dialog.showModal();
+      document.documentElement.classList.add('project-dialog-open');
+      content.scrollTop = 0;
+      close.focus();
+    });
+    details.before(button);
+    details.hidden = true;
+  });
+})();
