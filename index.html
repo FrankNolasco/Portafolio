@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/site.css">
   <script src="./js/theme.js"></script>
   <script src="./js/navigation.js" defer></script>
+  <script src="./js/mural.js" defer></script>
 </head>
 <body class="home">
   <a class="skip-link" href="#inicio">Saltar al contenido</a>
@@ -15,13 +16,27 @@
     <a class="menu-marca" href="#inicio">Frank Nolasco</a>
     <button class="menu-toggle btn" type="button" aria-expanded="false" aria-controls="home-navigation" hidden>Menú</button>
     <nav id="home-navigation" aria-label="Navegación principal">
-      <ul><li><a href="#inicio">Inicio</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#areas">Áreas</a></li><li><a href="#sobre">Sobre este portafolio</a></li></ul>
+      <ul><li><a href="#inicio">Inicio</a></li><li><a href="#presentacion">Presentación</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#areas">Áreas</a></li><li><a href="#sobre">Sobre este portafolio</a></li></ul>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
   </header>
   <main>
-    <section class="home-section hero" id="inicio" tabindex="-1" aria-labelledby="hero-title">
-      <div><h1 id="hero-title">Diseño y desarrollo de productos digitales</h1>
+    <section class="mural" id="inicio" tabindex="-1" aria-labelledby="mural-title">
+      <div class="mural-landscape" role="img" aria-label="Machu Picchu entre los Andes, dos llamas y una botella de Inca Kola sobre una piedra.">
+        <picture class="mural-fallback" aria-hidden="true">
+          <source media="(max-width: 600px)" srcset="./assets/mural/scene-mobile.svg">
+          <source media="(max-width: 1000px) and (orientation: portrait)" srcset="./assets/mural/scene-tablet.svg">
+          <img src="./assets/mural/scene-desktop.svg" width="640" height="320" alt="">
+        </picture>
+      </div>
+      <div class="mural-base">
+        <div class="mural-signature"><img src="./assets/mural/developer.svg" width="40" height="24" alt=""><h1 id="mural-title">Frank Nolasco</h1></div>
+        <a href="#presentacion">Explorar portafolio <span aria-hidden="true">↓</span></a>
+        <button class="mural-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
+      </div>
+    </section>
+    <section class="home-section hero" id="presentacion" tabindex="-1" aria-labelledby="hero-title">
+      <div><h2 id="hero-title">Diseño y desarrollo de productos digitales</h2>
         <p class="hero-description">Organizar tareas, encontrar objetos para el hogar o preparar una ruta. Explora cómo cada interfaz ordena la información y facilita el siguiente paso.</p>
         <div class="home-actions"><a class="btn" href="./proyectos.html">Explorar proyectos</a><a href="#sobre">Sobre este portafolio</a></div>
       </div>
