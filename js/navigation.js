@@ -38,7 +38,7 @@
     update();
     history.pushState(null, '', a.hash);
     target.focus({ preventScroll: true });
-    move(scrollY + target.getBoundingClientRect().top, 450);
+    move(scrollY + target.getBoundingClientRect().top - header.getBoundingClientRect().height - 16, 450);
   });
   // Smooth discrete mouse-wheel steps only; trackpad/inertial streams stay native.
   let lastWheel = -Infinity;
@@ -61,6 +61,7 @@
   mobile.addEventListener('change', layout);
   const update = () => {
     const height = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--menu-height', `${height}px`);
     let active = sections[0];
     sections.forEach(s => { if (s.getBoundingClientRect().top <= height + 24) active = s; });
     links.forEach(a => { if (a.hash === `#${active.id}`) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });

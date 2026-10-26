@@ -1,4 +1,4 @@
-/* Crop the supplied image proportionally; never stretch or alter its pixels. */
+/* Preserve the entire supplied panorama, including its embedded lettering. */
 .home .portada {
   position: relative;
   height: 100vh;
@@ -9,9 +9,10 @@
 .portada-background {
   display: block;
   width: 100%;
+  max-width: none;
   height: 100%;
-  object-fit: cover;
-  object-position: 53% center;
+  object-fit: contain;
+  object-position: center;
 }
 .portada-actor {
   position: absolute;
@@ -26,7 +27,7 @@
 .portada .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: paused; }
 .portada.portada-running .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: running; }
 .home .menu-principal {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   color: var(--text);
   background: color-mix(in srgb, var(--page) 88%, transparent);
