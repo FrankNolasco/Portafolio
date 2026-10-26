@@ -1,0 +1,122 @@
+{
+  "version": "4.0.0",
+  "supersedes": "Paisaje dibujado, BIENVENIDO/máscara/firma superpuesta y marcha quedan obsoletos para próxima integración. No borrar históricos.",
+  "background": {
+    "path": "assets/portada-v4/background.png",
+    "dimensions": [
+      1846,
+      852
+    ],
+    "sha256": "15a37000d9eca6b30c42f849ea8b7216eceb92164f6754bdca360e5892b4db02",
+    "immutable": true,
+    "text": "DEVELOPMENT, subtítulos y firma ya integrados; NO superponer otros textos ni modificar píxeles."
+  },
+  "actor": {
+    "path": "assets/portada-v4/llama.svg",
+    "viewBox": [
+      -10,
+      -8,
+      165,
+      260
+    ],
+    "resources": [
+      "body.png",
+      "head.png",
+      "front-leg.png",
+      "wave-arm.png",
+      "neck-bridge.png",
+      "lids.png"
+    ],
+    "embedding": "SVG autónomo con seis PNG incrustados en data URI: admite img, object o inline sin solicitudes externas. Para pausa y acceso al ciclo usar inline con IDs/clases prefijados. PNG separados son maestros raster editables para recomposición; no son dependencias de carga.",
+    "anchor": {
+      "name": "suelo entre pezuñas",
+      "point": [
+        66,
+        235
+      ]
+    },
+    "body": "Mismo cuerpo/anatomía todos los estados. Solo cabeza gira ±10°, miembro de saludo y párpados cambian. No caminar ni trasladar contenedor.",
+    "complementary": "Cabeza inclinada sobre mismo cuerpo; párpados complementarios y brazo original extraído/combinado. No usar bustos de fila BLINK ni sustituir cuerpo por otras filas. Mirar alrededor se interpreta mediante inclinación alterna de cabeza ±10°, no rotación 3D ni sustitución por las cabezas de perfil de otra fila. Párpados usan textura de la propia frente y trazos de pestaña. Es interpretación animada, no reproducción literal de todos los cuadros de la hoja."
+  },
+  "desktop": {
+    "referenceDimensions": [
+      1846,
+      852
+    ],
+    "actorRect": [
+      1205,
+      245,
+      600,
+      945
+    ],
+    "visibleCrop": "La referencia muestra animal grande cortado por borde inferior. Contenedor overflow:hidden; mantener una sola llama. Escala equivale a 600/165=3.636 unidades por píxel de sprite. Revisar tamaño final con Orquestador.",
+    "backgroundFit": "A tamaño de referencia cubrir 1846×852 sin deformar. Para cover, aplicar la MISMA matriz de escala y traslación a fondo y anclaje del actor; no usar porcentajes independientes con object-fit."
+  },
+  "responsive": {
+    "suggestion": "En pantallas estrechas usar escena completa contain sobre fondo sólido para conservar DEVELOPMENT/firma intactos; alternativa cover exige aprobar recorte de textos integrados. Actor en capa independiente, anclaje visible sugerido x=.79*ancho, y=1.18*alto con cuerpo cortado como referencia, cabeza dentro viewport; escala clamp(150px,32.5vw,600px). Evitar tapar DEVELOPMENT. No se exige ni implementa aquí responsive web.",
+    "pending": "Evaluar escritorio/tablet/móvil con frontend; no redibujar ni retocar fondo para compensar recorte."
+  },
+  "timelineMs": {
+    "duration": 16000,
+    "segments": [
+      {
+        "state": "reposo",
+        "from": 0,
+        "to": 3200
+      },
+      {
+        "state": "elevar miembro",
+        "from": 3200,
+        "to": 4480
+      },
+      {
+        "state": "saludo dos oscilaciones",
+        "from": 4480,
+        "to": 7040
+      },
+      {
+        "state": "bajar miembro y volver reposo",
+        "from": 7040,
+        "to": 7680
+      },
+      {
+        "state": "mirar lado A",
+        "from": 7680,
+        "to": 10240
+      },
+      {
+        "state": "mirar lado B",
+        "from": 10240,
+        "to": 12480
+      },
+      {
+        "state": "volver y reposo",
+        "from": 12480,
+        "to": 16000
+      }
+    ],
+    "blink": [
+      [
+        1856,
+        1984
+      ],
+      [
+        8096,
+        8224
+      ],
+      [
+        14016,
+        14144
+      ]
+    ],
+    "transition": "Interpolación ease-in-out en cabeza/miembro; fundido 20–25% y44–48% entre miembro en apoyo y elevado sobre un cuerpo idéntico. Sin cambio a busto. Párpados en 128ms con rampas de96ms.",
+    "reducedMotion": "Media query desactiva animación: postura neutra, brazo oculto, miembro de apoyo visible; consumidor debe añadir pausa si integra movimiento persistente."
+  },
+  "alpha": {
+    "sourceHasAlpha": false,
+    "source": "RGB, damero impreso",
+    "method": "Fondo neutral conectado al borde eliminado, se conserva componente principal cálida y agujeros interiores. Borde descontaminado según mate neutral; trazado manual para brazo. No chroma global sobre ojos ni colores internos. Silueta manual del cuerpo, parche complementario del mismo cuello detrás del giro y fundido de 8px en unión de cabeza; evita hueco al inclinar.",
+    "limitations": "Recorte raster derivado de hoja ilustrada; no reconstruye render3D. Alineación complementaria requiere validación visual, no se presentan cuadros sintéticos como originales de hoja."
+  },
+  "scope": "Solo recursos/contrato, no integración web. Referencia de composición NO publicada."
+}

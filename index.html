@@ -7,7 +7,6 @@
   <title>Frank Nolasco · Interfaces y productos digitales</title>
   <link rel="stylesheet" href="./css/site.css">
   <link rel="stylesheet" href="./css/machu-picchu.css">
-  <link rel="stylesheet" href="./assets/machu-picchu/llama-walk.css">
   <script src="./js/theme.js"></script>
   <script src="./js/navigation.js" defer></script>
   <script src="./js/mural.js" defer></script>
@@ -23,19 +22,16 @@
     <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
   </header>
   <main>
-    <section class="mural" id="inicio" tabindex="-1" aria-labelledby="mural-title">
-      <h1 id="mural-title" class="sr-only">BIENVENIDO</h1>
-      <svg class="mural-art" viewBox="0 0 480 320" preserveAspectRatio="none" role="img" aria-label="BIENVENIDO. Machu Picchu en pixel art: nubes, montañas, cerro central y ruinas, con una llama en primer plano a la derecha.">
-        <g class="mural-scene"><image href="./assets/machu-picchu/scene.svg" width="480" height="320"/></g>
-        <g class="mural-depth" aria-hidden="true">
-          <svg class="mural-welcome" width="480" height="320" viewBox="0 0 480 320" fill="#fff4ce"><g class="mural-lettering"><text x="125" y="77" font-size="28" font-family="monospace" textLength="327" lengthAdjust="spacingAndGlyphs">BIENVENIDO</text></g></svg>
-        </g>
-        <g class="mural-animal" transform="translate(340 96)">
-          <svg class="mural-llama" width="128" height="224" viewBox="0 0 128 224" overflow="visible" aria-hidden="true"><image href="./assets/machu-picchu/llama-cubic.svg" width="128" height="224"/></svg>
-        </g>
+    <section class="portada" id="inicio" tabindex="-1" aria-labelledby="portada-title">
+      <h1 id="portada-title" class="sr-only">Development · Ideas, código, resultados · Frank Nolasco</h1>
+      <img class="portada-background" src="./assets/portada-v4/background.png" width="1846" height="852" alt="Machu Picchu entre montañas y nubes, iluminado por el sol." fetchpriority="high">
+      <svg class="portada-actor" viewBox="-10 -8 165 260" aria-hidden="true" focusable="false">
+        <image href="./assets/portada-v4/neck-bridge.png" x="12" y="96" width="76" height="40"/>
+        <image href="./assets/portada-v4/body.png" width="135" height="242"/>
+        <image href="./assets/portada-v4/front-leg.png" width="135" height="242"/>
+        <image href="./assets/portada-v4/head.png" width="135" height="242"/>
       </svg>
-      <p class="mural-signature">Desarrollado por <span>Frank Nolasco</span></p>
-      <button class="mural-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
+      <button class="portada-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
     </section>
     <section class="home-section hero" id="presentacion" tabindex="-1" aria-labelledby="hero-title">
       <div><h2 id="hero-title">Diseño y desarrollo de productos digitales</h2>

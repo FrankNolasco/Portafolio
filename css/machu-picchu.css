@@ -1,51 +1,43 @@
-/* The illustration's palette is independent of the portfolio theme. */
-.home .mural {
+/* Crop the supplied image proportionally; never stretch or alter its pixels. */
+.home .portada {
   position: relative;
-  display: block;
   height: calc(100svh - var(--menu-height));
-  min-height: 0;
-  background: #91b9c7;
+  background: #14364b;
+  overflow: hidden; /* The foreground animal is intentionally cropped at the bottom. */
 }
-.home .mural-art {
+.home .portada:focus { scroll-margin-block: 0; }
+.portada-background {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: none;
-  shape-rendering: crispEdges;
+  object-fit: cover;
+  object-position: 53% center;
 }
-.home .mural-signature {
+.portada-actor {
   position: absolute;
-  left: clamp(1rem, 3vw, 3rem);
-  bottom: 1.25rem;
-  display: block;
-  margin: 0;
-  color: #fff4ce;
-  font: italic clamp(18px, 2vw, 30px)/1.15 "Brush Script MT", "Segoe Script", cursive;
-  text-shadow: 1px 2px 2px #27332b;
-  transform: rotate(-3deg);
+  width: 32.5%;
+  height: auto;
+  aspect-ratio: 165 / 260;
+  right: 2%;
+  bottom: -25%;
+  overflow: visible;
+  pointer-events: none;
 }
-.home .mural-signature span { display: block; font-size: 1.3em; }
-.home .mural-motion {
+.portada .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: paused; }
+.portada.portada-running .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: running; }
+.portada-motion {
   position: absolute;
-  left: 45%;
-  bottom: 1rem;
+  top: 1rem;
+  left: 1rem;
   min-height: 44px;
   padding: .5rem .75rem;
   color: #fff4ce;
-  background: #293d40;
+  background: #14364b;
   border: 1px solid #fff4ce;
   cursor: pointer;
 }
-.home .mural-motion:hover { background: #172b2e; }
-.home .mural-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
-.home .mural-llama { animation: none; }
-.home .mural-welcome {
-  visibility: hidden;
-}
-.home .mural-mask-ready .mural-welcome { visibility: visible; }
-.home .mural-llama :is(.leg, .knee) { animation-play-state: paused; }
-.home .mural-running .mural-llama :is(.leg, .knee) { animation-play-state: running; }
-@media (max-aspect-ratio: 1/1) {
-  .home .mural-signature { bottom: 4.5rem; font-size: 19px; }
-  .home .mural-motion { left: 1rem; right: auto; }
+.portada-motion:hover { background: #08293c; }
+.portada-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .portada .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation: none; }
 }

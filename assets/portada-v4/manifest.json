@@ -1,0 +1,137 @@
+{
+  "version": "4.0.0",
+  "externalSpend": 0,
+  "files": [
+    {
+      "file": "assets/portada-v4/background.png",
+      "format": "png",
+      "dimensions": [
+        1846,
+        852
+      ],
+      "sha256": "15a37000d9eca6b30c42f849ea8b7216eceb92164f6754bdca360e5892b4db02",
+      "bytes": 2329583,
+      "origin": "Externo suministrado, copia exacta sin modificación",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 fondo intacto"
+    },
+    {
+      "file": "assets/portada-v4/body.png",
+      "format": "png",
+      "dimensions": [
+        135,
+        242
+      ],
+      "sha256": "4fd31d7dc09f1e069875c839ac0cf88befaa3eaa9b965000fb66d3cf6687a873",
+      "bytes": 14769,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/front-leg.png",
+      "format": "png",
+      "dimensions": [
+        135,
+        242
+      ],
+      "sha256": "cd8b3e49303915c0c7a904f26056453bb90511e3ea8be58b432d25cbe8fa436b",
+      "bytes": 3911,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/head.png",
+      "format": "png",
+      "dimensions": [
+        135,
+        242
+      ],
+      "sha256": "97e8b68bc32f7db2992edb52dc958086df55ae015e93a3e7a5df32bd40343305",
+      "bytes": 12177,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/integration.json",
+      "format": "json",
+      "dimensions": null,
+      "sha256": "fce77af8c392ac99f999cec87f7c53339617b6420c5d2110005e0edc4f54ea53",
+      "bytes": 5090,
+      "origin": "Propio sintético: composición, interpolación y contrato locales",
+      "license": "Código/composición propios bajo MIT del proyecto; no relicencia imágenes externas incrustadas.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/lids.png",
+      "format": "png",
+      "dimensions": [
+        135,
+        242
+      ],
+      "sha256": "5ffebc701b0363dc3a235a081fd2ca0f2fa6bcb687d74de556f22edc77afca43",
+      "bytes": 1024,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/llama.svg",
+      "format": "svg",
+      "dimensions": [
+        270,
+        484
+      ],
+      "sha256": "d79a7e54d6e6888e45de9c55e201c4a620d213c3dacd29fbc4b1cd047db97218",
+      "bytes": 63342,
+      "origin": "Mixto: sprites externos suministrados, composición e interpolación sintéticas propias",
+      "license": "Código/composición propios bajo MIT del proyecto; no relicencia imágenes externas incrustadas.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/neck-bridge.png",
+      "format": "png",
+      "dimensions": [
+        76,
+        40
+      ],
+      "sha256": "980050f2ba90c10f523423800e1c8b9931832a28c449c687516139cd83cfe323",
+      "bytes": 6478,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    },
+    {
+      "file": "assets/portada-v4/wave-arm.png",
+      "format": "png",
+      "dimensions": [
+        69,
+        64
+      ],
+      "sha256": "4e9a8ba71589ba410de209f2b57faca514764e3b44ad755674bc3157ed8c8154",
+      "bytes": 7695,
+      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
+      "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
+    }
+  ],
+  "sources": {
+    "background": {
+      "path": "context/attachments/72c61d00-a642-48b0-97c9-3e6973737b98.png",
+      "sha256": "15a37000d9eca6b30c42f849ea8b7216eceb92164f6754bdca360e5892b4db02",
+      "use": "Copia byte a byte"
+    },
+    "placement": {
+      "path": "context/attachments/c3bd4e6b-53bd-4705-a3a5-f746febb4e18.png",
+      "sha256": "c4e3eb5c85eb6775b3b1e51e3690ea0e09003632fb1f761d1af9adb05d1cd884",
+      "use": "Solo referencia visual, no publicada"
+    },
+    "sheet": {
+      "path": "context/attachments/24375a32-1ef8-4d7d-9eaf-de5c261fea42.png",
+      "sha256": "55850adf497a4ed87181c812a9c594cbfe5e4f0cafb63dabd6fa1677b8ccafbc",
+      "use": "Recortes derivados, no hoja completa"
+    }
+  }
+}
