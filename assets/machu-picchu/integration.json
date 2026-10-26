@@ -1,0 +1,112 @@
+{
+  "version": "1.0.0",
+  "paths": [
+    "assets/machu-picchu/scene.svg",
+    "assets/machu-picchu/llama.svg"
+  ],
+  "layers": [
+    "scene",
+    "BIENVENIDO (integración pendiente)",
+    "llama"
+  ],
+  "desktop": {
+    "viewBox": [
+      0,
+      0,
+      480,
+      320
+    ],
+    "llamaBox": [
+      340,
+      96,
+      128,
+      224
+    ],
+    "welcomeSafeBox": [
+      114,
+      22,
+      99,
+      17
+    ],
+    "peak": [
+      250,
+      25
+    ],
+    "note": "Caja de cielo libre comprobada, a la izquierda del ápice y bajo las nubes. Texto pixelado de hasta 99×17 unidades (297×51 px a 3x). No ampliar hacia el cerro sin revisar composición."
+  },
+  "mobile": {
+    "viewBox": [
+      0,
+      0,
+      240,
+      320
+    ],
+    "sceneTransform": "translate(-76 0) scale(.91 1)",
+    "llamaTransform": "translate(116 118) scale(.88)",
+    "peak": [
+      151.5,
+      25
+    ],
+    "note": "Recomposición, no cover de escritorio. Ajustar viewport sin perder ápice ni patas; referencia de uso 720×960."
+  },
+  "llama": {
+    "viewBox": [
+      0,
+      0,
+      128,
+      224
+    ],
+    "legs": [
+      {
+        "id": "leg-rear-far",
+        "anchor": [
+          93.5,
+          146
+        ]
+      },
+      {
+        "id": "leg-front-far",
+        "anchor": [
+          57.5,
+          150
+        ]
+      },
+      {
+        "id": "leg-rear-near",
+        "anchor": [
+          101.5,
+          150
+        ]
+      },
+      {
+        "id": "leg-front-near",
+        "anchor": [
+          70.0,
+          154
+        ]
+      }
+    ],
+    "integration": "Inline SVG; img no expone grupos al CSS externo. Prefijar IDs si hay varias instancias.",
+    "animation": {
+      "durationMs": 850,
+      "angleDegrees": [
+        -9,
+        9
+      ],
+      "phaseA": [
+        "leg-front-near",
+        "leg-rear-far"
+      ],
+      "phaseB": [
+        "leg-front-far",
+        "leg-rear-near"
+      ],
+      "phaseOffsetMs": 425,
+      "timing": "ease-in-out alternate infinite",
+      "stationary": "Rotar solo grupos de patas alrededor de anchor; nunca trasladar cuerpo ni contenedor. Reservar 12 unidades de margen lateral a las patas.",
+      "reducedMotion": "prefers-reduced-motion:reduce → sin animación, posición neutra."
+    }
+  },
+  "rendering": "Geometría editable, shape-rendering crispEdges; evitar filtros y suavizado. Solo SVG propio, coste externo cero.",
+  "scope": "Recursos sin integración de portada, menú, firma o footer."
+}

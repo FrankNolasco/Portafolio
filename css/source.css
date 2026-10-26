@@ -58,7 +58,7 @@
   ::selection { background: var(--text); color: var(--page); }
   [hidden] { display: none !important; }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
   }
 }
 

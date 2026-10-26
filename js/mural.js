@@ -1,59 +1,48 @@
 (() => {
-  const mural = document.querySelector('.mural');
-  if (!mural) return;
-  const landscape = mural.querySelector('.mural-landscape');
-  const button = mural.querySelector('.mural-motion');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  new ResizeObserver(entries => {
-    const size = entries[0].borderBoxSize[0].blockSize;
-    mural.style.setProperty('--mural-controls-height', `${size}px`);
-  }).observe(mural.querySelector('.mural-base'));
-  let paused = false, visible = false;
+  const cover = document.querySelector('.portada');
+  if (!cover) return;
+  const actor = cover.querySelector('.portada-actor');
+  const layout = () => {
+    const width = cover.clientWidth, height = cover.clientHeight;
+    const scale = Math.max(width / 1846, height / 852);
+    const imageWidth = 1846 * scale, imageHeight = 852 * scale;
+    const imageX = (width - imageWidth) * .53, imageY = (height - imageHeight) / 2;
+    // Keep the peak in the crop and recompose the foreground independently so
+    // the head and greeting remain visible when the panorama's sides are cropped.
+    const portrait = width < height;
+    const actorWidth = portrait ? Math.min(width * .7, 360) : Math.min(600 * scale, width * .36);
+    actor.style.width = `${actorWidth}px`;
+    actor.style.left = `${portrait ? width - actorWidth : Math.min(imageX + 1205 * scale, width - actorWidth)}px`;
+    actor.style.top = `${portrait ? height * .45 : imageY + 245 * scale}px`;
+    actor.style.right = 'auto';
+    actor.style.bottom = 'auto';
+  };
+  new ResizeObserver(layout).observe(cover);
+  layout();
+
+  const button = cover.querySelector('.portada-motion');
+  let paused = false, visible = true;
   const update = () => {
-    mural.classList.toggle('mural-running', visible && !paused && !reduced.matches && !document.hidden);
-    button.hidden = reduced.matches;
+    cover.classList.toggle('portada-running', !paused && visible && !document.hidden);
+    button.hidden = false;
     button.setAttribute('aria-pressed', String(paused));
     button.textContent = paused ? 'Reanudar animación' : 'Pausar animación';
   };
-  // The local picture remains complete if fetching or enhancement is unavailable.
-  Promise.all(['desktop', 'tablet', 'mobile'].map(async variant => {
-    const response = await fetch(`./assets/mural/scene-${variant}.svg`);
-    if (!response.ok) throw new Error('Mural no disponible');
-    const parsed = new DOMParser().parseFromString(await response.text(), 'image/svg+xml');
+  fetch('./assets/portada-v4/llama.svg').then(response => {
+    if (!response.ok) throw new Error('Llama no disponible');
+    return response.text();
+  }).then(text => {
+    const parsed = new DOMParser().parseFromString(text, 'image/svg+xml');
     if (parsed.querySelector('parsererror')) throw new Error('SVG no válido');
-    const svg = document.importNode(parsed.documentElement, true);
-    svg.querySelectorAll('style').forEach(style => style.remove());
-    const classes = {desktop: 'mural-desktop', tablet: 'mural-tablet', mobile: 'mural-mobile'};
-    svg.classList.add('mural-art', classes[variant]);
-    svg.removeAttribute('role');
-    svg.removeAttribute('aria-label');
-    svg.setAttribute('aria-hidden', 'true');
-    svg.setAttribute('focusable', 'false');
-    svg.querySelectorAll('[id]').forEach(group => {
-      const name = group.id;
-      group.id = `mural-${variant}-${name}`;
-      if (name === 'clouds' || name.startsWith('llama-')) {
-        const inner = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        inner.setAttribute('class', name === 'clouds' ? 'mural-clouds' : 'mural-llama');
-        while (group.firstChild) inner.append(group.firstChild);
-        group.append(inner);
-      }
+    const nodes = [...parsed.documentElement.children].map(node => document.importNode(node, true));
+    // Scope the supplied animation without modifying the accepted resource.
+    nodes.filter(node => node.tagName === 'style').forEach(style => {
+      style.textContent = style.textContent.replace(/\.p4-/g, '.portada-actor .p4-');
     });
-    return svg;
-  })).then(scenes => {
-    landscape.replaceChildren(...scenes);
+    actor.replaceChildren(...nodes);
     button.addEventListener('click', () => { paused = !paused; update(); });
-    reduced.addEventListener('change', update);
     document.addEventListener('visibilitychange', update);
-    let observer;
-    new ResizeObserver(entries => {
-      observer?.disconnect();
-      observer = new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        update();
-      }, {rootMargin: `-${entries[0].borderBoxSize[0].blockSize}px 0px 0px 0px`});
-      observer.observe(landscape);
-    }).observe(document.querySelector('.menu-principal'));
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(cover);
     update();
-  }).catch(() => { /* Keep the static local illustration and no inactive control. */ });
+  }).catch(() => { /* The layered fallback remains static and needs no pause button. */ });
 })();

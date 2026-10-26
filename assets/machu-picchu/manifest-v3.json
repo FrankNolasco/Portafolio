@@ -1,0 +1,58 @@
+{
+  "version": "3.0.0",
+  "externalSpend": 0,
+  "files": [
+    {
+      "file": "assets/machu-picchu/llama-cubic.svg",
+      "format": "svg",
+      "dimensionsPx": [
+        384,
+        672
+      ],
+      "sha256": "0fec22f1ce00cce9d11b73d03bbdcee0940cc44a46c2db57761dc269923acf52",
+      "origin": "Propio sintético: dibujo geométrico local; máscara derivada exactamente del SVG propio existente. No imágenes importadas.",
+      "license": "MIT del proyecto para geometría/código propios; Minecraft y las imágenes de referencia no se relicencian. Sin texturas ni modelos del juego.",
+      "brief": "Plan 3: llama cúbica articulada y ocultación real del texto por cerro."
+    },
+    {
+      "file": "assets/machu-picchu/llama-walk.css",
+      "format": "css",
+      "dimensionsPx": null,
+      "sha256": "bd61c874d20e1786a5c227e0e9a6197c1456c691009d20c28fd8b70e7dbfa568",
+      "origin": "Propio sintético: dibujo geométrico local; máscara derivada exactamente del SVG propio existente. No imágenes importadas.",
+      "license": "MIT del proyecto para geometría/código propios; Minecraft y las imágenes de referencia no se relicencian. Sin texturas ni modelos del juego.",
+      "brief": "Plan 3: llama cúbica articulada y ocultación real del texto por cerro."
+    },
+    {
+      "file": "assets/machu-picchu/welcome-mask.svg",
+      "format": "svg",
+      "dimensionsPx": [
+        1440,
+        960
+      ],
+      "sha256": "f57e10df35d9a66a303338b0b52504d89143741644715e2c3a12d32919af008e",
+      "origin": "Propio sintético: dibujo geométrico local; máscara derivada exactamente del SVG propio existente. No imágenes importadas.",
+      "license": "MIT del proyecto para geometría/código propios; Minecraft y las imágenes de referencia no se relicencian. Sin texturas ni modelos del juego.",
+      "brief": "Plan 3: llama cúbica articulada y ocultación real del texto por cerro."
+    },
+    {
+      "file": "assets/machu-picchu/integration-v3.json",
+      "format": "json",
+      "dimensionsPx": null,
+      "sha256": "68137bcf95254fba9c4adab57debe1418f705af358e3fbe8c7d8d22c22540071",
+      "origin": "Propio sintético: dibujo geométrico local; máscara derivada exactamente del SVG propio existente. No imágenes importadas.",
+      "license": "MIT del proyecto para geometría/código propios; Minecraft y las imágenes de referencia no se relicencian. Sin texturas ni modelos del juego.",
+      "brief": "Plan 3: llama cúbica articulada y ocultación real del texto por cerro."
+    }
+  ],
+  "reference": {
+    "file": "context/f1c2cf0b-154f-4f12-9b74-e0d51a016181.pdf",
+    "sha256": "950b0ea30ee44ee6a8ac5394ca80ad72fa4f2df7dd6f2384df955b3f3df1cd52",
+    "pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  "referenceLicense": "No acreditada; PDF no redistribuido ni incrustado. Referencia visual únicamente."
+}

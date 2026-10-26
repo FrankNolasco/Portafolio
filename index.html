@@ -6,6 +6,7 @@
   <meta name="description" content="Interfaces para organizar tareas, explorar objetos para el hogar y planificar itinerarios. Descubre los proyectos y sus formas de presentar la información.">
   <title>Frank Nolasco · Interfaces y productos digitales</title>
   <link rel="stylesheet" href="./css/site.css">
+  <link rel="stylesheet" href="./css/machu-picchu.css">
   <script src="./js/theme.js"></script>
   <script src="./js/navigation.js" defer></script>
   <script src="./js/mural.js" defer></script>
@@ -21,19 +22,23 @@
     <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
   </header>
   <main>
-    <section class="mural" id="inicio" tabindex="-1" aria-labelledby="mural-title">
-      <div class="mural-landscape" role="img" aria-label="Machu Picchu entre los Andes, dos llamas y una botella de Inca Kola sobre una piedra.">
-        <picture class="mural-fallback" aria-hidden="true">
-          <source media="(max-width: 600px)" srcset="./assets/mural/scene-mobile.svg">
-          <source media="(max-width: 1000px) and (orientation: portrait)" srcset="./assets/mural/scene-tablet.svg">
-          <img src="./assets/mural/scene-desktop.svg" width="640" height="320" alt="">
-        </picture>
-      </div>
-      <div class="mural-base">
-        <div class="mural-signature"><img src="./assets/mural/developer.svg" width="40" height="24" alt=""><h1 id="mural-title">Frank Nolasco</h1></div>
-        <a href="#presentacion">Explorar portafolio <span aria-hidden="true">↓</span></a>
-        <button class="mural-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
-      </div>
+    <section class="portada" id="inicio" tabindex="-1" aria-labelledby="portada-title">
+      <h1 id="portada-title" class="sr-only">Development · Ideas, código, resultados · Frank Nolasco</h1>
+      <img class="portada-background" src="./assets/portada-v4/background.png" width="1846" height="852" alt="Machu Picchu entre montañas y nubes, iluminado por el sol." fetchpriority="high">
+      <svg class="portada-actor" viewBox="-10 -8 165 260" aria-hidden="true" focusable="false">
+<defs>
+  <linearGradient id="p4-neck-tone"><stop stop-color="#fff0c5"/><stop offset=".65" stop-color="#eed5ae"/><stop offset="1" stop-color="#c5a47e"/></linearGradient>
+  <clipPath id="p4-head-edge"><path d="M19 15L24 12H47.5V44H64.5V16.5L69 14H92.7V51.8L96 54.7V110.5L93.3 114.3V123.7H18V115H11.5V68.5L13.3 65V52.5L19 49Z"/></clipPath>
+  <clipPath id="p4-body-edge"><path d="M11.5 116H85.5V131.5L119 134.5V137L121.5 138V148L125 149V182L121.5 183V188L120 189V229.5L105 232L89 229.5V191L64 190L45 189V230L29 233L13 230V188L9.5 186V149L11.5 148Z"/></clipPath>
+  <clipPath id="p4-leg-edge"><path d="M51 182L64 179H67L83.2 180.5V204L80 205.5V223.5L66.5 227L51 224.5Z"/></clipPath>
+  <clipPath id="p4-arm-edge"><path d="M2 61L3 42L38.5 10.6L48.6 1.8L62.5 6.5L68.4 24L57 34L15.2 63Z"/></clipPath>
+</defs>
+<path fill="url(#p4-neck-tone)" d="M15 106H88V140H15Z"/>
+<image href="./assets/portada-v4/body.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-body-edge)"/>
+<image href="./assets/portada-v4/front-leg.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-leg-edge)"/>
+<g transform="scale(.91 1)"><image href="./assets/portada-v4/head.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-head-edge)"/></g>
+      </svg>
+      <button class="portada-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
     </section>
     <section class="home-section hero" id="presentacion" tabindex="-1" aria-labelledby="hero-title">
       <div><h2 id="hero-title">Diseño y desarrollo de productos digitales</h2>
@@ -53,6 +58,6 @@
     <section class="home-section" id="areas" tabindex="-1" aria-labelledby="areas-title"><h2 id="areas-title">Áreas de diseño</h2><dl class="areas-list"><div><dt>Interfaces</dt><dd>Menús, paneles y fichas que mantienen la información accesible en pantallas grandes y pequeñas.</dd></div><div><dt>Interacción</dt><dd>Búsqueda y filtros para acotar resultados, con estados que indican qué se está mostrando.</dd></div><div><dt>Visualización</dt><dd>Tareas agrupadas por estado, prioridades visibles y rutas divididas en etapas para facilitar la lectura.</dd></div></dl></section>
     <section class="home-section about" id="sobre" tabindex="-1" aria-labelledby="about-title"><h2 id="about-title">Sobre este portafolio</h2><p>La colección reúne distintas formas de organizar tareas, productos y recorridos. En el catálogo puedes buscar por nombre o categoría y abrir cada ficha para conocer el problema, el objetivo y sus funciones principales.</p></section>
   </main>
-  <footer class="home-footer"><span>Frank Nolasco</span><small>Los proyectos y su contenido son ficticios; no representan experiencia profesional.</small><a href="#inicio">Volver arriba</a></footer>
+  <footer class="home-footer"><span>Frank Nolasco</span><small>Los proyectos y su contenido son ficticios; no representan experiencia profesional.<br>La imagen de referencia no es de mi autoría</small><a href="#inicio">Volver arriba</a></footer>
 </body>
 </html>

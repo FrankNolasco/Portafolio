@@ -1,0 +1,7 @@
+/* Inline SVG requerido. Ciclo de 1 segundo: apoyo 0–50%, retorno elevado 50–100%. */
+.home .mural-llama :is(.leg,.knee){transform-box:view-box;animation-duration:1000ms;animation-iteration-count:infinite;animation-timing-function:linear}
+.home .mural-llama .leg{animation-name:mural-cubic-step}.home .mural-llama .knee{animation-name:mural-cubic-knee}
+.home .mural-llama .phase-b{animation-delay:-500ms}
+@keyframes mural-cubic-step{0%{transform:rotate(-22deg)}50%{transform:rotate(22deg)}75%{transform:rotate(0deg)}100%{transform:rotate(-22deg)}}
+@keyframes mural-cubic-knee{0%,50%,100%{transform:rotate(0deg)}65%,80%{transform:rotate(-48deg)}}
+@media(prefers-reduced-motion:reduce){.home .mural-llama :is(.leg,.knee){animation:none;transform:none}}
