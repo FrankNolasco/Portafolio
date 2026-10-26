@@ -6,6 +6,7 @@
   <meta name="description" content="Interfaces para organizar tareas, explorar objetos para el hogar y planificar itinerarios. Descubre los proyectos y sus formas de presentar la información.">
   <title>Frank Nolasco · Interfaces y productos digitales</title>
   <link rel="stylesheet" href="./css/site.css">
+  <link rel="stylesheet" href="./css/machu-picchu.css">
   <script src="./js/theme.js"></script>
   <script src="./js/navigation.js" defer></script>
   <script src="./js/mural.js" defer></script>
@@ -22,18 +23,16 @@
   </header>
   <main>
     <section class="mural" id="inicio" tabindex="-1" aria-labelledby="mural-title">
-      <div class="mural-landscape" role="img" aria-label="Machu Picchu entre los Andes, dos llamas y una botella de Inca Kola sobre una piedra.">
-        <picture class="mural-fallback" aria-hidden="true">
-          <source media="(max-width: 600px)" srcset="./assets/mural/scene-mobile.svg">
-          <source media="(max-width: 1000px) and (orientation: portrait)" srcset="./assets/mural/scene-tablet.svg">
-          <img src="./assets/mural/scene-desktop.svg" width="640" height="320" alt="">
-        </picture>
-      </div>
-      <div class="mural-base">
-        <div class="mural-signature"><img src="./assets/mural/developer.svg" width="40" height="24" alt=""><h1 id="mural-title">Frank Nolasco</h1></div>
-        <a href="#presentacion">Explorar portafolio <span aria-hidden="true">↓</span></a>
-        <button class="mural-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
-      </div>
+      <h1 id="mural-title" class="sr-only">BIENVENIDO</h1>
+      <svg class="mural-art" viewBox="0 0 480 320" preserveAspectRatio="none" role="img" aria-label="BIENVENIDO. Machu Picchu en pixel art: nubes, montañas, cerro central y ruinas, con una llama en primer plano a la derecha.">
+        <g class="mural-scene"><image href="./assets/machu-picchu/scene.svg" width="480" height="320"/></g>
+        <g class="mural-welcome" transform="translate(114 22)" fill="#fff4ce" stroke="#293d40" stroke-width=".7" paint-order="stroke" aria-hidden="true"><text x="0" y="13" font-size="15" font-family="monospace" textLength="99" lengthAdjust="spacingAndGlyphs">BIENVENIDO</text></g>
+        <g class="mural-animal" transform="translate(340 96)">
+          <svg class="mural-llama" width="128" height="224" viewBox="0 0 128 224" overflow="visible" aria-hidden="true"><image href="./assets/machu-picchu/llama.svg" width="128" height="224"/></svg>
+        </g>
+      </svg>
+      <p class="mural-signature">Desarrollado por <span>Frank Nolasco</span></p>
+      <button class="mural-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
     </section>
     <section class="home-section hero" id="presentacion" tabindex="-1" aria-labelledby="hero-title">
       <div><h2 id="hero-title">Diseño y desarrollo de productos digitales</h2>
@@ -53,6 +52,6 @@
     <section class="home-section" id="areas" tabindex="-1" aria-labelledby="areas-title"><h2 id="areas-title">Áreas de diseño</h2><dl class="areas-list"><div><dt>Interfaces</dt><dd>Menús, paneles y fichas que mantienen la información accesible en pantallas grandes y pequeñas.</dd></div><div><dt>Interacción</dt><dd>Búsqueda y filtros para acotar resultados, con estados que indican qué se está mostrando.</dd></div><div><dt>Visualización</dt><dd>Tareas agrupadas por estado, prioridades visibles y rutas divididas en etapas para facilitar la lectura.</dd></div></dl></section>
     <section class="home-section about" id="sobre" tabindex="-1" aria-labelledby="about-title"><h2 id="about-title">Sobre este portafolio</h2><p>La colección reúne distintas formas de organizar tareas, productos y recorridos. En el catálogo puedes buscar por nombre o categoría y abrir cada ficha para conocer el problema, el objetivo y sus funciones principales.</p></section>
   </main>
-  <footer class="home-footer"><span>Frank Nolasco</span><small>Los proyectos y su contenido son ficticios; no representan experiencia profesional.</small><a href="#inicio">Volver arriba</a></footer>
+  <footer class="home-footer"><span>Frank Nolasco</span><small>Los proyectos y su contenido son ficticios; no representan experiencia profesional.<br>La imagen de referencia no es de mi autoría</small><a href="#inicio">Volver arriba</a></footer>
 </body>
 </html>

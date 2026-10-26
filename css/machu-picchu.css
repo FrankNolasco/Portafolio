@@ -1,0 +1,56 @@
+/* The illustration's palette is independent of the portfolio theme. */
+.home .mural {
+  position: relative;
+  display: block;
+  height: calc(100svh - var(--menu-height));
+  min-height: 0;
+  background: #91b9c7;
+}
+.home .mural-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  shape-rendering: crispEdges;
+}
+.home .mural-signature {
+  position: absolute;
+  left: clamp(1rem, 3vw, 3rem);
+  bottom: 1.25rem;
+  display: block;
+  margin: 0;
+  color: #fff4ce;
+  font: italic clamp(18px, 2vw, 30px)/1.15 "Brush Script MT", "Segoe Script", cursive;
+  text-shadow: 1px 2px 2px #27332b;
+  transform: rotate(-3deg);
+}
+.home .mural-signature span { display: block; font-size: 1.3em; }
+.home .mural-motion {
+  position: absolute;
+  left: 45%;
+  bottom: 1rem;
+  min-height: 44px;
+  padding: .5rem .75rem;
+  color: #fff4ce;
+  background: #293d40;
+  border: 1px solid #fff4ce;
+  cursor: pointer;
+}
+.home .mural-motion:hover { background: #172b2e; }
+.home .mural-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
+.home .mural-llama { animation: none; }
+.mural-leg {
+  transform-box: view-box;
+  animation: llama-walk 850ms ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.mural-leg-opposite { animation-delay: -425ms; }
+.mural-running .mural-leg { animation-play-state: running; }
+@keyframes llama-walk { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+@media (max-aspect-ratio: 1/1) {
+  .home .mural-signature { bottom: 4.5rem; font-size: 19px; }
+  .home .mural-motion { left: 1rem; right: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mural-leg { animation: none; transform: none; }
+}

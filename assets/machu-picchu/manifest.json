@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "externalSpend": 0,
+  "files": [
+    {
+      "file": "assets/machu-picchu/scene.svg",
+      "format": "svg",
+      "dimensions": {
+        "px": [
+          1440,
+          960
+        ],
+        "viewBox": [
+          0,
+          0,
+          480,
+          320
+        ]
+      },
+      "sha256": "636b9ea2b43c1517c082d84eaad8a7eae964bc6f359d7124794d0fcced3dfa2a",
+      "origin": "Propio, sintético: geometría original mediante script local, no foto ni importación de Codex.",
+      "license": "MIT del proyecto; no extiende derechos sobre referencia.",
+      "brief": "RF-01 composición, RF-04 articulaciones, RF-05 espacio reservado, RF-08 reencuadre."
+    },
+    {
+      "file": "assets/machu-picchu/llama.svg",
+      "format": "svg",
+      "dimensions": {
+        "px": [
+          384,
+          672
+        ],
+        "viewBox": [
+          0,
+          0,
+          128,
+          224
+        ]
+      },
+      "sha256": "c307d2268cae93f90e6e35bc1d6df4450f7366b6bedd299394869c8640b399af",
+      "origin": "Propio, sintético: geometría original mediante script local, no foto ni importación de Codex.",
+      "license": "MIT del proyecto; no extiende derechos sobre referencia.",
+      "brief": "RF-01 composición, RF-04 articulaciones, RF-05 espacio reservado, RF-08 reencuadre."
+    },
+    {
+      "file": "assets/machu-picchu/integration.json",
+      "format": "json",
+      "dimensions": null,
+      "sha256": "cb1b0db5667b50eac6a02d9373fd7366c2c5a3147e3cdaf99e548dc36c0afbf5",
+      "origin": "Propio, sintético: geometría original mediante script local, no foto ni importación de Codex.",
+      "license": "MIT del proyecto; no extiende derechos sobre referencia.",
+      "brief": "RF-01 composición, RF-04 articulaciones, RF-05 espacio reservado, RF-08 reencuadre."
+    }
+  ],
+  "reference": {
+    "file": "context/4fa89da4-4ccc-4040-88e3-a555e157d605.pdf",
+    "page": 1,
+    "use": "Observación visual; no se incrusta, filtra ni vectoriza la fotografía.",
+    "license": "No acreditada; no redistribuida."
+  }
+}
