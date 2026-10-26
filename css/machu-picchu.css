@@ -39,18 +39,13 @@
 .home .mural-motion:hover { background: #172b2e; }
 .home .mural-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
 .home .mural-llama { animation: none; }
-.mural-leg {
-  transform-box: view-box;
-  animation: llama-walk 850ms ease-in-out infinite alternate;
-  animation-play-state: paused;
+.home .mural-welcome {
+  visibility: hidden;
 }
-.mural-leg-opposite { animation-delay: -425ms; }
-.mural-running .mural-leg { animation-play-state: running; }
-@keyframes llama-walk { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+.home .mural-mask-ready .mural-welcome { visibility: visible; }
+.home .mural-llama :is(.leg, .knee) { animation-play-state: paused; }
+.home .mural-running .mural-llama :is(.leg, .knee) { animation-play-state: running; }
 @media (max-aspect-ratio: 1/1) {
   .home .mural-signature { bottom: 4.5rem; font-size: 19px; }
   .home .mural-motion { left: 1rem; right: auto; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .mural-leg { animation: none; transform: none; }
 }

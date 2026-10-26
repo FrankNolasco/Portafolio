@@ -6,9 +6,11 @@
   const mobile = matchMedia('(max-aspect-ratio: 1/1)');
   const layout = () => {
     art.setAttribute('viewBox', mobile.matches ? '0 0 240 320' : '0 0 480 320');
-    mural.querySelector('.mural-scene').setAttribute('transform', mobile.matches ? 'translate(-76 0) scale(.91 1)' : '');
+    const sceneTransform = mobile.matches ? 'translate(-76 0) scale(.91 1)' : '';
+    mural.querySelector('.mural-scene').setAttribute('transform', sceneTransform);
+    mural.querySelector('.mural-depth').setAttribute('transform', sceneTransform);
     mural.querySelector('.mural-animal').setAttribute('transform', mobile.matches ? 'translate(116 118) scale(.88)' : 'translate(340 96)');
-    mural.querySelector('.mural-welcome').setAttribute('transform', mobile.matches ? 'translate(30 22)' : 'translate(114 22)');
+    mural.querySelector('.mural-lettering').setAttribute('transform', mobile.matches ? 'translate(87 50) scale(4.75 4)' : 'translate(125 50) scale(6 4)');
   };
   mobile.addEventListener('change', layout);
   layout();
@@ -24,19 +26,31 @@
     O:['01110','10001','10001','10001','10001','10001','01110']
   };
   const lettering = document.createElementNS(ns, 'g');
-  lettering.setAttribute('transform', 'translate(0 2) scale(1.65)');
   lettering.setAttribute('shape-rendering', 'crispEdges');
   [...'BIENVENIDO'].forEach((letter, index) => letters[letter].forEach((row,y) => [...row].forEach((pixel,x) => {
     if (pixel !== '1') return;
     const rect = document.createElementNS(ns, 'rect');
-    Object.entries({x:index*6+x,y,width:1,height:1}).forEach(([key,value]) => rect.setAttribute(key,value));
+    Object.entries({x:index*5.5+x,y,width:1,height:1}).forEach(([key,value]) => rect.setAttribute(key,value));
     lettering.append(rect);
   })));
   lettering.setAttribute('stroke', 'none');
-  const shadow = lettering.cloneNode(true);
-  shadow.setAttribute('transform', 'translate(.7 2.7) scale(1.65)');
-  shadow.setAttribute('fill', '#293d40');
-  mural.querySelector('.mural-welcome').replaceChildren(shadow, lettering);
+  mural.querySelector('.mural-lettering').replaceChildren(lettering);
+
+  // User-space mask and lettering share the landscape's exact coordinate system.
+  // Import the original contour, rather than stretching an image to the glyph bounds.
+  fetch('./assets/machu-picchu/welcome-mask.svg').then(response => {
+    if (!response.ok) throw new Error('Máscara no disponible');
+    return response.text();
+  }).then(text => {
+    const parsed = new DOMParser().parseFromString(text, 'image/svg+xml');
+    const defs = parsed.querySelector('defs');
+    if (parsed.querySelector('parsererror') || !defs) throw new Error('Máscara no válida');
+    const imported = document.importNode(defs, true);
+    imported.querySelector('mask').id = 'mural-text-outside-mountain';
+    art.prepend(imported);
+    mural.querySelector('.mural-welcome').setAttribute('mask', 'url(#mural-text-outside-mountain)');
+    mural.classList.add('mural-mask-ready');
+  }).catch(() => { /* Keep the accessible heading if its decorative mask cannot load. */ });
 
   const button = mural.querySelector('.mural-motion');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -47,7 +61,7 @@
     button.setAttribute('aria-pressed', String(paused));
     button.textContent = paused ? 'Reanudar animación' : 'Pausar animación';
   };
-  fetch('./assets/machu-picchu/llama.svg').then(response => {
+  fetch('./assets/machu-picchu/llama-cubic.svg').then(response => {
     if (!response.ok) throw new Error('Recurso no disponible');
     return response.text();
   }).then(text => {
@@ -55,13 +69,6 @@
     if (parsed.querySelector('parsererror')) throw new Error('SVG no válido');
     const svg = mural.querySelector('.mural-llama');
     svg.replaceChildren(...[...parsed.documentElement.children].map(node => document.importNode(node,true)));
-    const pivots = {'leg-rear-far':[93.5,146], 'leg-front-far':[57.5,150], 'leg-rear-near':[101.5,150], 'leg-front-near':[70,154]};
-    Object.entries(pivots).forEach(([id,[x,y]]) => {
-      const leg = svg.querySelector(`#${id}`);
-      leg.classList.add('mural-leg');
-      if (id === 'leg-front-far' || id === 'leg-rear-near') leg.classList.add('mural-leg-opposite');
-      leg.style.transformOrigin = `${x}px ${y}px`;
-    });
     button.addEventListener('click', () => { paused = !paused; update(); });
     reduced.addEventListener('change', update);
     document.addEventListener('visibilitychange', update);

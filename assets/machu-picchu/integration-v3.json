@@ -1,0 +1,113 @@
+{
+  "version": "3.0.0",
+  "supersedes": "integration.json v1 solo para llama y texto; no ejecutar integración en esta tarea",
+  "sceneUnchangedSha256": "636b9ea2b43c1517c082d84eaad8a7eae964bc6f359d7124794d0fcced3dfa2a",
+  "paths": {
+    "llama": "assets/machu-picchu/llama-cubic.svg",
+    "animation": "assets/machu-picchu/llama-walk.css",
+    "textMask": "assets/machu-picchu/welcome-mask.svg"
+  },
+  "desktop": {
+    "viewBox": [
+      0,
+      0,
+      480,
+      320
+    ],
+    "llamaBox": [
+      340,
+      96,
+      128,
+      224
+    ],
+    "textBand": [
+      125,
+      49,
+      327,
+      29
+    ],
+    "text": "BIENVENIDO",
+    "layerOrder": [
+      "paisaje existente (incluye cerro)",
+      "texto con máscara alfa inversa del cerro",
+      "llama",
+      "firma existente"
+    ],
+    "equivalentVisualOrder": "montañas fondo → texto → cerro; se logra recortando solo texto, no con sombra",
+    "maskAlignment": "Aplicar máscara al contenedor de texto que ocupa TODO el viewBox 480×320; mask-size:100% 100%; mask-repeat:no-repeat; mask-mode:alpha. No aplicar mask-size al tamaño de la caja de letras. SVG inline: reutilizar defs de welcome-mask.svg y mask=url(#text-outside-mountain).",
+    "textStudy": "Letras de estudio: 6×4 unidades por píxel, avance 33, altura 28, ancho total 327. El cerro oculta parte central de la palabra según PDF p1/p2. No sombra."
+  },
+  "mobile": {
+    "sceneTransform": "Conservar la transformación vigente del paisaje; máscara y texto deben compartir exactamente esa matriz y viewport.",
+    "llamaTransform": "translate(116 118) scale(.88) como estudio previo; revisar junto al frontend en cada viewport.",
+    "note": "No separar la transformación de máscara de la del cerro. No se implementa responsive aquí."
+  },
+  "llama": {
+    "viewBox": [
+      0,
+      0,
+      128,
+      224
+    ],
+    "fixedBodyId": "llama-body",
+    "anchors": {
+      "leg-front-far": [
+        55,
+        151
+      ],
+      "leg-rear-far": [
+        91,
+        151
+      ],
+      "leg-front-near": [
+        43,
+        159
+      ],
+      "leg-rear-near": [
+        81,
+        159
+      ]
+    },
+    "kneeAnchors": {
+      "leg-front-far": [
+        55,
+        175
+      ],
+      "leg-rear-far": [
+        91,
+        175
+      ],
+      "leg-front-near": [
+        43,
+        183
+      ],
+      "leg-rear-near": [
+        81,
+        183
+      ]
+    },
+    "classes": "leg/knee y phase-a/phase-b; conservar transform-origin inline; cargar CSS de recurso solo sobre SVG inline y encapsular selectores al integrar",
+    "cycleMs": 1000,
+    "phaseA": [
+      "leg-front-near",
+      "leg-rear-far"
+    ],
+    "phaseB": [
+      "leg-front-far",
+      "leg-rear-near"
+    ],
+    "support": "Primera mitad: barrido -22° a +22°, rodilla extendida. Segunda mitad: retorno +22° a -22°, flexión -48° en 65–80%; pares en oposición 500ms.",
+    "stationary": "Cuerpo/cuello/cabeza y contenedor sin animación ni traslación; solo hombros/caderas y rodillas.",
+    "reducedMotion": "Sin animación por media query; conservar postura neutra.",
+    "integrationWarning": "La integración anterior que selecciona solo polígonos o IDs v1 debe adaptarse a estos grupos; no reemplazar automáticamente el fichero v1 en la web."
+  },
+  "reference": {
+    "file": "context/f1c2cf0b-154f-4f12-9b74-e0d51a016181.pdf",
+    "sha256": "950b0ea30ee44ee6a8ac5394ca80ad72fa4f2df7dd6f2384df955b3f3df1cd52",
+    "pages": [
+      1,
+      2,
+      3
+    ]
+  }
+}
