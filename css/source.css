@@ -38,12 +38,9 @@
     }
   }
   html { scroll-padding-top: calc(var(--menu-height) + 1rem); scrollbar-color: var(--line) var(--page); }
-  /* Reserve the expanded navigation height without JavaScript. The measured
-     inline value from navigation.js takes precedence when enhancement runs. */
-  :root:has(.home) { --menu-height: 5rem; }
-  @media (max-width: 900px) {
-    :root:has(.home) { --menu-height: 18rem; }
-  }
+  html:has(.home) { scroll-padding-top: 0; }
+  .home { position: relative; }
+  .home :focus { scroll-margin-block: 0; }
   body { background: var(--page); color: var(--text); font-family: system-ui, sans-serif; font-size: 1rem; line-height: 1.6; }
   h1, h2, h3 { line-height: 1.1; text-wrap: balance; font-weight: 650; }
   h1 { font-size: clamp(2.5rem, 7vw, 6rem); letter-spacing: -.03em; }
@@ -132,7 +129,7 @@
   .lenguajes-extra { margin: 2rem auto; padding-inline: 1rem; }
   .skip-link { position: fixed; top: -8rem; left: 1rem; z-index: 30; padding: 1rem; background: var(--page); }
   .skip-link:focus { top: 1rem; }
-  .home-section { width: min(100% - 3rem, 80rem); margin-inline: auto; padding-block: var(--space-section); min-height: calc(100svh - var(--menu-height)); overflow-wrap: anywhere; }
+  .home-section { width: min(100% - 3rem, 80rem); margin-inline: auto; padding-block: var(--space-section); min-height: 100vh; overflow-wrap: anywhere; }
   /* Anchor sections already clear the header through html scroll-padding. */
   .home-section:focus { scroll-margin-block: 0; }
   .hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 3rem; }

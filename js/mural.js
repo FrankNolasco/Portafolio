@@ -20,13 +20,14 @@
   new ResizeObserver(layout).observe(cover);
   layout();
 
-  const button = cover.querySelector('.portada-motion');
-  let paused = false, visible = true;
+  const button = document.querySelector('.portada-motion');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reduced.matches, visible = true;
   const update = () => {
     cover.classList.toggle('portada-running', !paused && visible && !document.hidden);
     button.hidden = false;
-    button.setAttribute('aria-pressed', String(paused));
-    button.textContent = paused ? 'Reanudar animación' : 'Pausar animación';
+    button.dataset.paused = String(paused);
+    button.setAttribute('aria-label', paused ? 'Reanudar animación' : 'Pausar animación');
   };
   fetch('./assets/portada-v4/llama.svg').then(response => {
     if (!response.ok) throw new Error('Llama no disponible');
@@ -41,6 +42,7 @@
     });
     actor.replaceChildren(...nodes);
     button.addEventListener('click', () => { paused = !paused; update(); });
+    reduced.addEventListener('change', () => { paused = reduced.matches; update(); });
     document.addEventListener('visibilitychange', update);
     new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(cover);
     update();

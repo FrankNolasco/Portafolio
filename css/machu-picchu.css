@@ -1,7 +1,7 @@
 /* Crop the supplied image proportionally; never stretch or alter its pixels. */
 .home .portada {
   position: relative;
-  height: calc(100svh - var(--menu-height));
+  height: 100vh;
   background: #14364b;
   overflow: hidden; /* The foreground animal is intentionally cropped at the bottom. */
 }
@@ -25,16 +25,41 @@
 }
 .portada .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: paused; }
 .portada.portada-running .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation-play-state: running; }
-.portada-motion {
+.home .menu-principal {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  inset: 0 0 auto;
+  color: var(--text);
+  background: color-mix(in srgb, var(--page) 88%, transparent);
+  border-bottom: 0;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.home .menu-principal a { color: inherit; }
+.home .menu-principal a:hover { text-decoration-thickness: 3px; }
+.home .menu-principal :focus-visible { outline-color: currentColor; }
+.menu-controls { display: flex; align-items: center; gap: .5rem; }
+.portada-motion, .home .theme-toggle, .home .menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   min-height: 44px;
-  padding: .5rem .75rem;
-  color: #fff4ce;
-  background: #14364b;
-  border: 1px solid #fff4ce;
+  padding: .625rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: .25rem;
   cursor: pointer;
 }
-.portada-motion:hover { background: #08293c; }
-.portada-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
+.portada-motion { width: 44px; }
+.home .menu-principal button:hover, .home .menu-principal button:active { background: var(--surface); }
+.motion-play, [data-paused="true"] .motion-pause { display: none; }
+[data-paused="true"] .motion-play { display: block; }
+@supports not (backdrop-filter: blur(1px)) {
+  .home .menu-principal { background: color-mix(in srgb, var(--page) 96%, transparent); }
+}
+@media (max-width: 380px) {
+  .home .menu-principal { padding-inline: .5rem; gap: .375rem; }
+  .home .menu-marca { font-size: .875rem; }
+  .menu-controls { gap: .375rem; }
+}

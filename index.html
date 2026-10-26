@@ -19,7 +19,10 @@
     <nav id="home-navigation" aria-label="Navegación principal">
       <ul><li><a href="#inicio">Inicio</a></li><li><a href="#presentacion">Presentación</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#areas">Áreas</a></li><li><a href="#sobre">Sobre este portafolio</a></li></ul>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
+    <div class="menu-controls">
+      <button class="portada-motion" type="button" aria-label="Pausar animación" hidden><svg class="icon motion-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="icon motion-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z"/></svg></button>
+      <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" hidden><svg class="icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
+    </div>
   </header>
   <main>
     <section class="portada" id="inicio" tabindex="-1" aria-labelledby="portada-title">
@@ -38,7 +41,6 @@
 <image href="./assets/portada-v4/front-leg.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-leg-edge)"/>
 <g transform="scale(.91 1)"><image href="./assets/portada-v4/head.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-head-edge)"/></g>
       </svg>
-      <button class="portada-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
     </section>
     <section class="home-section hero" id="presentacion" tabindex="-1" aria-labelledby="hero-title">
       <div><h2 id="hero-title">Diseño y desarrollo de productos digitales</h2>
