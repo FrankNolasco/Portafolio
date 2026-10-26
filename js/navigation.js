@@ -35,8 +35,6 @@
     const target = document.getElementById(a.hash.slice(1));
     if (!target) return;
     e.preventDefault(); close();
-    // Refresh the viewport-dependent sections using the closed header before
-    // measuring the anchor; ResizeObserver otherwise updates this after the jump.
     update();
     history.pushState(null, '', a.hash);
     target.focus({ preventScroll: true });
