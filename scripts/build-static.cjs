@@ -16,7 +16,6 @@ const files = [
   'assets/portada-v4/body.png',
   'assets/portada-v4/head.png',
   'assets/portada-v4/front-leg.png',
-  'assets/portada-v4/neck-bridge.png',
   'js/catalog.js',
   'js/project-dialog.js',
   'assets/demos/orbita.svg',

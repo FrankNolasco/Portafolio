@@ -38,6 +38,3 @@
 }
 .portada-motion:hover { background: #08293c; }
 .portada-motion:focus-visible { outline: 3px solid #fff4ce; outline-offset: 3px; }
-@media (prefers-reduced-motion: reduce) {
-  .portada .portada-actor :is(.p4-head, .p4-arm, .p4-leg, .p4-lid) { animation: none; }
-}

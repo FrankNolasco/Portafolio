@@ -26,10 +26,17 @@
       <h1 id="portada-title" class="sr-only">Development · Ideas, código, resultados · Frank Nolasco</h1>
       <img class="portada-background" src="./assets/portada-v4/background.png" width="1846" height="852" alt="Machu Picchu entre montañas y nubes, iluminado por el sol." fetchpriority="high">
       <svg class="portada-actor" viewBox="-10 -8 165 260" aria-hidden="true" focusable="false">
-        <image href="./assets/portada-v4/neck-bridge.png" x="12" y="96" width="76" height="40"/>
-        <image href="./assets/portada-v4/body.png" width="135" height="242"/>
-        <image href="./assets/portada-v4/front-leg.png" width="135" height="242"/>
-        <image href="./assets/portada-v4/head.png" width="135" height="242"/>
+<defs>
+  <linearGradient id="p4-neck-tone"><stop stop-color="#fff0c5"/><stop offset=".65" stop-color="#eed5ae"/><stop offset="1" stop-color="#c5a47e"/></linearGradient>
+  <clipPath id="p4-head-edge"><path d="M19 15L24 12H47.5V44H64.5V16.5L69 14H92.7V51.8L96 54.7V110.5L93.3 114.3V123.7H18V115H11.5V68.5L13.3 65V52.5L19 49Z"/></clipPath>
+  <clipPath id="p4-body-edge"><path d="M11.5 116H85.5V131.5L119 134.5V137L121.5 138V148L125 149V182L121.5 183V188L120 189V229.5L105 232L89 229.5V191L64 190L45 189V230L29 233L13 230V188L9.5 186V149L11.5 148Z"/></clipPath>
+  <clipPath id="p4-leg-edge"><path d="M51 182L64 179H67L83.2 180.5V204L80 205.5V223.5L66.5 227L51 224.5Z"/></clipPath>
+  <clipPath id="p4-arm-edge"><path d="M2 61L3 42L38.5 10.6L48.6 1.8L62.5 6.5L68.4 24L57 34L15.2 63Z"/></clipPath>
+</defs>
+<path fill="url(#p4-neck-tone)" d="M15 106H88V140H15Z"/>
+<image href="./assets/portada-v4/body.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-body-edge)"/>
+<image href="./assets/portada-v4/front-leg.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-leg-edge)"/>
+<g transform="scale(.91 1)"><image href="./assets/portada-v4/head.png" width="135" height="242" preserveAspectRatio="none" clip-path="url(#p4-head-edge)"/></g>
       </svg>
       <button class="portada-motion" type="button" aria-pressed="false" hidden>Pausar animación</button>
     </section>

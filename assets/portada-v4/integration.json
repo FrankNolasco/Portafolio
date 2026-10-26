@@ -23,11 +23,9 @@
       "body.png",
       "head.png",
       "front-leg.png",
-      "wave-arm.png",
-      "neck-bridge.png",
-      "lids.png"
+      "wave-arm.png"
     ],
-    "embedding": "SVG autónomo con seis PNG incrustados en data URI: admite img, object o inline sin solicitudes externas. Para pausa y acceso al ciclo usar inline con IDs/clases prefijados. PNG separados son maestros raster editables para recomposición; no son dependencias de carga.",
+    "embedding": "SVG autónomo con cuatro PNG restaurados en alta resolución, máscaras de contorno y cuello/párpados vectoriales. Regenerar con npm run build:llama. El primer fotograma del HTML usa los mismos contornos. Los PNG separados son fuentes editables, no dependencias del SVG autónomo.",
     "anchor": {
       "name": "suelo entre pezuñas",
       "point": [
@@ -36,7 +34,7 @@
       ]
     },
     "body": "Mismo cuerpo/anatomía todos los estados. Solo cabeza gira ±10°, miembro de saludo y párpados cambian. No caminar ni trasladar contenedor.",
-    "complementary": "Cabeza inclinada sobre mismo cuerpo; párpados complementarios y brazo original extraído/combinado. No usar bustos de fila BLINK ni sustituir cuerpo por otras filas. Mirar alrededor se interpreta mediante inclinación alterna de cabeza ±10°, no rotación 3D ni sustitución por las cabezas de perfil de otra fila. Párpados usan textura de la propia frente y trazos de pestaña. Es interpretación animada, no reproducción literal de todos los cuadros de la hoja."
+    "complementary": "Cabeza inclinada sobre el mismo cuerpo, con solapamiento en cuello y puente vectorial detrás del giro. Los párpados vectoriales siguen las posiciones de los ojos restaurados. Mirar alrededor se interpreta mediante inclinación alterna de cabeza ±10°. Es una restauración generativa de las piezas, no una recuperación exacta de detalle del original."
   },
   "desktop": {
     "referenceDimensions": [
@@ -110,13 +108,13 @@
       ]
     ],
     "transition": "Interpolación ease-in-out en cabeza/miembro; fundido 20–25% y44–48% entre miembro en apoyo y elevado sobre un cuerpo idéntico. Sin cambio a busto. Párpados en 128ms con rampas de96ms.",
-    "reducedMotion": "Media query desactiva animación: postura neutra, brazo oculto, miembro de apoyo visible; consumidor debe añadir pausa si integra movimiento persistente."
+    "reducedMotion": "La animación se reproduce independientemente de prefers-reduced-motion; la integración ofrece pausa manual y pausa cuando la portada o la pestaña no están visibles."
   },
   "alpha": {
     "sourceHasAlpha": false,
     "source": "RGB, damero impreso",
-    "method": "Fondo neutral conectado al borde eliminado, se conserva componente principal cálida y agujeros interiores. Borde descontaminado según mate neutral; trazado manual para brazo. No chroma global sobre ojos ni colores internos. Silueta manual del cuerpo, parche complementario del mismo cuello detrás del giro y fundido de 8px en unión de cabeza; evita hueco al inclinar.",
-    "limitations": "Recorte raster derivado de hoja ilustrada; no reconstruye render3D. Alineación complementaria requiere validación visual, no se presentan cuadros sintéticos como originales de hoja."
+    "method": "Piezas restauradas con imagegen integrado y transparencia alfa. Máscaras poligonales SVG eliminan bordes irregulares y píxeles sueltos; solapamiento y puente de cuello evitan huecos al inclinar. Cabeza, cuerpo y pata de apoyo de 937 píxeles de ancho; miembro de saludo de 1302 píxeles.",
+    "limitations": "La restauración reconstruye detalles y puede variar ligeramente respecto del sprite de baja resolución. Los PNG conservan su alfa generado; el recorte final limpio se aplica en el SVG y en el primer fotograma HTML."
   },
   "scope": "Solo recursos/contrato, no integración web. Referencia de composición NO publicada."
 }

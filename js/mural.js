@@ -21,11 +21,10 @@
   layout();
 
   const button = cover.querySelector('.portada-motion');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let paused = false, visible = true;
   const update = () => {
-    cover.classList.toggle('portada-running', !paused && visible && !reduced.matches && !document.hidden);
-    button.hidden = reduced.matches;
+    cover.classList.toggle('portada-running', !paused && visible && !document.hidden);
+    button.hidden = false;
     button.setAttribute('aria-pressed', String(paused));
     button.textContent = paused ? 'Reanudar animación' : 'Pausar animación';
   };
@@ -42,7 +41,6 @@
     });
     actor.replaceChildren(...nodes);
     button.addEventListener('click', () => { paused = !paused; update(); });
-    reduced.addEventListener('change', update);
     document.addEventListener('visibilitychange', update);
     new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(cover);
     update();

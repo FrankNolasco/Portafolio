@@ -19,12 +19,12 @@
       "file": "assets/portada-v4/body.png",
       "format": "png",
       "dimensions": [
-        135,
-        242
+        937,
+        1678
       ],
-      "sha256": "4fd31d7dc09f1e069875c839ac0cf88befaa3eaa9b965000fb66d3cf6687a873",
-      "bytes": 14769,
-      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "sha256": "78e2721cd7cf245e446c74e047813a1beb2e7944c8b19fdedb6563ddce98cb47",
+      "bytes": 655577,
+      "origin": "Restauración generativa en alta resolución de la pieza original; contorno depurado en el SVG.",
       "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
     },
@@ -32,12 +32,12 @@
       "file": "assets/portada-v4/front-leg.png",
       "format": "png",
       "dimensions": [
-        135,
-        242
+        937,
+        1679
       ],
-      "sha256": "cd8b3e49303915c0c7a904f26056453bb90511e3ea8be58b432d25cbe8fa436b",
-      "bytes": 3911,
-      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "sha256": "5b0cc063ed74b07460db56eb116d1b90d64fafdef0dbe2260012337507286da7",
+      "bytes": 147621,
+      "origin": "Restauración generativa en alta resolución de la pieza original; contorno depurado en el SVG.",
       "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
     },
@@ -45,12 +45,12 @@
       "file": "assets/portada-v4/head.png",
       "format": "png",
       "dimensions": [
-        135,
-        242
+        937,
+        1679
       ],
-      "sha256": "97e8b68bc32f7db2992edb52dc958086df55ae015e93a3e7a5df32bd40343305",
-      "bytes": 12177,
-      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "sha256": "2c4bf2eda1b0a6026be4c75019039805cddddd18a493dbbeecc00b3977dd7f06",
+      "bytes": 519989,
+      "origin": "Restauración generativa en alta resolución de la pieza original; contorno depurado en el SVG.",
       "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
     },
@@ -58,8 +58,8 @@
       "file": "assets/portada-v4/integration.json",
       "format": "json",
       "dimensions": null,
-      "sha256": "fce77af8c392ac99f999cec87f7c53339617b6420c5d2110005e0edc4f54ea53",
-      "bytes": 5090,
+      "sha256": "1facf37e3563731b1e3684937123610fa16377ae9f3190bb7e4db69fe6a80b7a",
+      "bytes": 5031,
       "origin": "Propio sintético: composición, interpolación y contrato locales",
       "license": "Código/composición propios bajo MIT del proyecto; no relicencia imágenes externas incrustadas.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
@@ -81,11 +81,11 @@
       "file": "assets/portada-v4/llama.svg",
       "format": "svg",
       "dimensions": [
-        270,
-        484
+        1080,
+        1702
       ],
-      "sha256": "d79a7e54d6e6888e45de9c55e201c4a620d213c3dacd29fbc4b1cd047db97218",
-      "bytes": 63342,
+      "sha256": "e19415039803a326b9f795efc0b655904f88bac609d5177a0b4ee9bcb8049b5d",
+      "bytes": 3078503,
       "origin": "Mixto: sprites externos suministrados, composición e interpolación sintéticas propias",
       "license": "Código/composición propios bajo MIT del proyecto; no relicencia imágenes externas incrustadas.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
@@ -107,12 +107,12 @@
       "file": "assets/portada-v4/wave-arm.png",
       "format": "png",
       "dimensions": [
-        69,
-        64
+        1302,
+        1208
       ],
-      "sha256": "4e9a8ba71589ba410de209f2b57faca514764e3b44ad755674bc3157ed8c8154",
-      "bytes": 7695,
-      "origin": "Derivado de hoja externa suministrada: recorte/alfa propios",
+      "sha256": "bcf377bd57c7028951c7cf906833b8884837f0cf9946ea08c2c7b8eddf02c838",
+      "bytes": 983656,
+      "origin": "Restauración generativa en alta resolución de la pieza original; contorno depurado en el SVG.",
       "license": "Licencia no acreditada; suministrado por usuario para este encargo, no afirmar MIT ni titularidad propia.",
       "brief": "Plan4 una llama fija con reposo, saludo, mirada y parpadeo"
     }
