@@ -2,30 +2,23 @@
   const cover = document.querySelector('.portada');
   if (!cover) return;
   const actor = cover.querySelector('.portada-actor');
-  const background = cover.querySelector('.portada-background');
   const layout = () => {
     const width = cover.clientWidth, height = cover.clientHeight;
-    // Below 1100px, the embedded secondary lettering falls below roughly 12px.
-    // Show the text-free source rectangle (650,420)-(1250,852), without
-    // replacing or editing the supplied panorama. Larger screens keep it whole.
+    // Picture selects the complete compact compositions; only position the actor.
     const compact = width <= 1100;
     if (compact) {
-      const scale = Math.min(width / 600, height / 432);
-      Object.assign(background.style, {
-        position: 'absolute', width: `${1846 * scale}px`, height: `${852 * scale}px`,
-        left: `${(width - 600 * scale) / 2 - 650 * scale}px`,
-        top: `${(height - 432 * scale) / 2 - 420 * scale}px`,
-        clipPath: `inset(${420 * scale}px ${596 * scale}px 0 ${650 * scale}px)`
-      });
-      const actorWidth = Math.min(width * .6, height * .45, 420);
+      const imageRatio = width <= 600 ? 941 / 1672 : width <= 900 ? 1 : 1536 / 1024;
+      const imageHeight = Math.min(height, width / imageRatio);
+      const imageWidth = imageHeight * imageRatio;
+      // Reserve the upper half for embedded lettering and the bottom for the signature.
+      const actorWidth = Math.min(width * .6, imageHeight * .42 * 165 / 260, 420);
       actor.style.width = `${actorWidth}px`;
-      actor.style.left = `${width - actorWidth}px`;
-      actor.style.top = `${(height - actorWidth * 260 / 165) / 2}px`;
+      actor.style.left = `${(width + imageWidth) / 2 - actorWidth}px`;
+      actor.style.top = `${(height - imageHeight) / 2 + imageHeight * .5}px`;
       actor.style.right = 'auto';
       actor.style.bottom = 'auto';
       return;
     }
-    background.removeAttribute('style');
     const scale = Math.min(width / 1846, height / 852);
     const imageWidth = 1846 * scale, imageHeight = 852 * scale;
     const imageX = (width - imageWidth) / 2, imageY = (height - imageHeight) / 2;

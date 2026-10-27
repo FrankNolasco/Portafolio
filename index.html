@@ -27,7 +27,12 @@
   <main>
     <section class="portada" id="inicio" tabindex="-1" aria-labelledby="portada-title">
       <h1 id="portada-title" class="sr-only">Development · Ideas, código, resultados · Frank Nolasco</h1>
-      <img class="portada-background" src="./assets/portada-v4/background.png" width="1846" height="852" alt="Machu Picchu entre montañas y nubes, iluminado por el sol." fetchpriority="high">
+      <picture class="portada-picture">
+        <source media="(max-width: 600px)" srcset="./assets/portada-v4/background-mobile.png" width="941" height="1672">
+        <source media="(max-width: 900px)" srcset="./assets/portada-v4/background-square.png" width="1254" height="1254">
+        <source media="(max-width: 1100px)" srcset="./assets/portada-v4/background-tablet.png" width="1536" height="1024">
+        <img class="portada-background" src="./assets/portada-v4/background.png" width="1846" height="852" alt="Machu Picchu entre montañas y nubes, iluminado por el sol." fetchpriority="high">
+      </picture>
       <svg class="portada-actor" viewBox="-10 -8 165 260" aria-hidden="true" focusable="false">
 <defs>
   <linearGradient id="p4-neck-tone"><stop stop-color="#fff0c5"/><stop offset=".65" stop-color="#eed5ae"/><stop offset="1" stop-color="#c5a47e"/></linearGradient>
