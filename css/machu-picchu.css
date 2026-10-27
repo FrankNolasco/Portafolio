@@ -36,6 +36,14 @@
   backdrop-filter: blur(16px);
 }
 .home .menu-principal a { color: inherit; }
+.home .menu-marca { flex-shrink: 0; }
+.menu-profile {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
 .home .menu-principal a:hover { text-decoration-thickness: 3px; }
 .home .menu-principal :focus-visible { outline-color: currentColor; }
 .menu-controls { display: flex; align-items: center; gap: .5rem; }
